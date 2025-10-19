@@ -55,7 +55,7 @@
             <offsetPosition x="1.550999" y="-0.662" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -175,7 +175,7 @@
             <offsetPosition x="74.996994" y="-0.651" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -296,7 +296,7 @@
             <offsetPosition x="103.646988" y="-0.651" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -417,7 +417,7 @@
             <offsetPosition x="32.7609978" y="-0.662" z="2.127" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -537,7 +537,7 @@
             <offsetPosition x="121.016991" y="-0.651" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -685,7 +685,7 @@
             <offsetPosition x="3.43699956" y="-0.662" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -805,7 +805,7 @@
             <offsetPosition x="76.9009857" y="-0.662" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -925,7 +925,7 @@
             <offsetPosition x="-25.218" y="-0.662" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -1045,7 +1045,7 @@
             <offsetPosition x="45.64098" y="-0.662" z="1.98200011" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -1165,7 +1165,7 @@
             <offsetPosition x="-42.5780029" y="-0.662" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -1304,7 +1304,7 @@
           <offsetPosition x="0" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;CenterPlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;CenterPlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -1329,7 +1329,7 @@
             <offsetPosition x="36.7940025" y="1.36400032" z="0" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;CenterPlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;CenterPlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -1517,7 +1517,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -1623,7 +1623,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -1739,7 +1739,7 @@
             <offsetPosition x="-14.5759983" y="1.36400032" z="0" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;CenterPlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;CenterPlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -1927,7 +1927,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -2022,7 +2022,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -2127,7 +2127,7 @@
             <offsetPosition x="-49.4059944" y="1.36400032" z="0" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;CenterPlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;CenterPlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -2315,7 +2315,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -2421,7 +2421,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -2567,7 +2567,7 @@
           <offsetPosition x="20.354" y="0.430999577" z="1.46299994" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -3196,7 +3196,7 @@
           <offsetPosition x="0" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -3409,7 +3409,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -3514,7 +3514,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -3817,7 +3817,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -3911,7 +3911,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -4203,7 +4203,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -4308,7 +4308,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -4452,7 +4452,7 @@
           <offsetPosition x="19.810997" y="0.431" z="-1.50100148" />
           <offsetRotation x="-0" y="180" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -5078,7 +5078,7 @@
           <offsetPosition x="0" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">1</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">1</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -5291,7 +5291,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -5396,7 +5396,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -5699,7 +5699,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -5793,7 +5793,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -6085,7 +6085,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>
@@ -6190,7 +6190,7 @@
             </transform>
             <whiteMesh />
             <defaultStyle>
-              <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+              <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
               <emissiveColor>FFFFFFFF</emissiveColor>
               <metallic>0</metallic>
               <smoothness>0</smoothness>

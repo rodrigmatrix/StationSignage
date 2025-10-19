@@ -33,15 +33,33 @@ namespace StationSignage.Formulas
         {
             if (EntityManager.HasComponent<SS_PlatformData>(building)) return building;
             building = EntityUtils.FindTopOwnership(building, EntityManager);
-            if (vars.TryGetValue(LinesFormulas.PLATFORM_VAR, out var platformStr) && byte.TryParse(platformStr, out var platform))
+            var platform = GetPlatformInt(vars);
+            if (platform != null)
             {
-
                 if (EntityManager.TryGetBuffer<SS_PlatformMappingLink>(building, true, out var buffer) && platform <= buffer.Length)
                 {
-                    return buffer[platform - 1].platformData;
+                    return buffer[(int)(platform - 1)].platformData;
                 }
             }
             return Entity.Null; // Return null if no matching platform is found
+        }
+
+        private static int? GetPlatformInt(Dictionary<string, string> vars)
+        {
+            var platformString = vars.GetValueOrDefault(LinesFormulas.PLATFORM_VAR);
+            var platformPosition = vars.GetValueOrDefault("platformPosition");
+            platformString = platformPosition switch
+            {
+                "left" => vars.GetValueOrDefault("platformLeft"),
+                "right" => vars.GetValueOrDefault("platformRight"),
+                _ => platformString
+            };
+            int? platformInt = null;
+            if (platformString != null)
+            {
+                platformInt = int.Parse(platformString);
+            }
+            return platformInt;
         }
 
         public static Entity GetIncomingTrainDestinationForPlatform(Entity platform)
@@ -136,6 +154,31 @@ namespace StationSignage.Formulas
                 _cachedConnections[(platformStop, lowestPriority, highestPriority)] = connections;
             }
             return connections;
+        }
+
+        public static Entity GetStationTransferIdx(Entity building, Dictionary<string, string> vars)
+        {
+            vars.TryGetValue("$idx", out var idxStr);
+            int.TryParse(idxStr, out var idx);
+            return GetStationTransfers(building, vars).ElementAtOrDefault(idx);
+        }
+        
+         public static List<Entity> GetStationTransfers(Entity building, Dictionary<string, string> vars)
+        {
+            if (EntityManager.HasComponent<SS_PlatformData>(building)) return [];
+            building = EntityUtils.FindTopOwnership(building, EntityManager);
+            var platformInt = GetPlatformInt(vars);
+            var transfers = new List<Entity>();
+            if (!EntityManager.TryGetBuffer<SS_PlatformMappingLink>(building, true, out var buffer)) return transfers;
+            for (var i = 0; i < buffer.Length; i++)
+            {
+                if (platformInt != null && platformInt != i)
+                {
+                    transfers.Add(buffer[i].platformData);
+                }
+            }
+
+            return transfers;
         }
 
         private static Dictionary<(Entity platform, TransportTypeByImportance low, TransportTypeByImportance high), List<SS_WaypointDestinationConnections>> _cachedConnections = [];

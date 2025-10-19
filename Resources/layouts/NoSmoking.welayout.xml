@@ -34,11 +34,12 @@
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="HelveticaWorld_Regular" maxWidthMeters="1.1">
+      <textMesh fontName="HelveticaWorld_Regular">
         <text formulae="&amp;StationSignage.Formulas.NamesFormulas;GetNoSmoking">Exitd awd awd awd aw dawd</text>
+        <MaxWidthMeters>1.1</MaxWidthMeters>
       </textMesh>
       <defaultStyle>
-        <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.OnPrimaryColor">000000FF</color>
+        <color formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOrDefault/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">000000FF</color>
         <emissiveColor>FFFFFFFF</emissiveColor>
         <metallic>0</metallic>
         <smoothness>0</smoothness>
@@ -62,11 +63,12 @@
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <imageMesh atlas="StationSignage:main">
+      <imageMesh atlas="StationSignage:StationIcons">
+        <mesh></mesh>
         <image>NoSmoking</image>
       </imageMesh>
       <defaultStyle>
-        <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.OnPrimaryColor">FFFFFFFF</color>
+        <color formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOrDefault/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
         <emissiveColor>FFFFFFFF</emissiveColor>
         <metallic>0</metallic>
         <smoothness>0</smoothness>

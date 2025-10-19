@@ -1,0 +1,162 @@
+<WELayout>
+  <self itemName="Line Status TV">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="7.52199936" y="-0.662" z="1.437" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="0" y="0" z="1" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <whiteMesh />
+    <defaultStyle>
+      <color>FFFFFFFF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+  <children>
+    <self itemName="Next Train Panel">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-39.3600044" y="13.310998" z="-1.29000211" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0" y="0" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationSignage:LineCityStatusPanel</layout>
+      </layoutMesh>
+    </self>
+  </children>
+  <children>
+    <self itemName="Next Train Panel">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-39.6499977" y="13.311" z="-1.288002" />
+        <offsetRotation x="-0" y="180" z="0" />
+        <scale x="0" y="0" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationSignage:LineCityStatusPanel</layout>
+      </layoutMesh>
+    </self>
+  </children>
+  <children>
+    <self itemName="Right">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-39.5" y="13.316" z="-0.434000015" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.3" y="1.10281253" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color>000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Left">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-39.5" y="13.316" z="-2.139" />
+        <offsetRotation x="-0" y="180" z="0" />
+        <scale x="0.3" y="1.10281253" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color>000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Top">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-39.5" y="13.8700008" z="-1.283" />
+        <offsetRotation x="270" y="180" z="0" />
+        <scale x="0.3" y="1.70921886" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color>000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Bottom">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-39.5" y="12.7560015" z="-1.28299987" />
+        <offsetRotation x="90" y="180" z="0" />
+        <scale x="0.3" y="1.70992" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color>000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+</WELayout>
