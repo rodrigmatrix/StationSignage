@@ -75,13 +75,15 @@ A huge thank you to **Klyte45** for their incredible work on **Write Everywhere*
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-signage.1747876/" />
 	<!--Version of the mod-->
-	<ModVersion Value="0.0.1" />
+	<ModVersion Value="0.0.2" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.*" />
 	<Dependency Id="92908" />
 	<Dependency Id="75426" />
-	<!--ChangeLog>
-	</ChangeLog-->
+	<ChangeLog>
+# v0.0.2
+  - Updated to new game version
+	</ChangeLog>
 	<ExternalLink Type="kofi" Url="https://ko-fi.com/rodrigmatrix" />
 	<ExternalLink Type="github" Url="https://github.com/rodrigmatrix/StationSignage" />
 	<ExternalLink Type="youtube" Url="https://youtu.be/ZV5wcXG3FpA" />
