@@ -15,7 +15,6 @@ namespace StationSignage.Systems
 
         protected override void OnCreate()
         {
-            m_ToolOutputBarrier = World.GetExistingSystemManaged<ToolOutputBarrier>();
             m_TempQuery = base.GetEntityQuery(
         [
                 new EntityQueryDesc
@@ -37,7 +36,9 @@ namespace StationSignage.Systems
             {
                 return;
             }
-            new MarkDirtyConnectionsOnToolApplyJob
+
+			m_ToolOutputBarrier ??= World.GetOrCreateSystemManaged<ToolOutputBarrier>();
+			new MarkDirtyConnectionsOnToolApplyJob
             {
                 m_cmdBuffer = m_ToolOutputBarrier.CreateCommandBuffer().AsParallelWriter(),
                 m_EntityType = GetEntityTypeHandle(),

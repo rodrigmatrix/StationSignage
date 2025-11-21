@@ -33,7 +33,7 @@ namespace StationSignage.Systems
         {
             base.OnCreate();
             Instance = this;
-            _simulationSystem = World.GetExistingSystemManaged<SimulationSystem>();            
+            _simulationSystem = World.GetOrCreateSystemManaged<SimulationSystem>();            
             _linesStatusesQuery = GetEntityQuery(new EntityQueryDesc[] {
                 new() {
                     All =
@@ -97,7 +97,7 @@ namespace StationSignage.Systems
                     numberLookup = GetComponentLookup<RouteNumber>(true),
                     prefabRefLookup = GetComponentLookup<PrefabRef>(true),
                     transportLineLookup = GetComponentLookup<TransportLineData>(true),
-                    cmdBuffer = World.GetExistingSystemManaged<EndFrameBarrier>().CreateCommandBuffer().AsParallelWriter()
+                    cmdBuffer = World.GetOrCreateSystemManaged<EndFrameBarrier>().CreateCommandBuffer().AsParallelWriter()
                 }.ScheduleParallel(_linesRequiringUpdateQuery, Dependency).Complete();
             }
 

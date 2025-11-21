@@ -44,7 +44,7 @@ public class Settings(IMod mod) : ModSetting(mod)
     {
         set
         {
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<SS_PlatformMappingSystem>().MarkToResetWaypointsDestinations();
+            World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_PlatformMappingSystem>().MarkToResetWaypointsDestinations();
         }
     }
 

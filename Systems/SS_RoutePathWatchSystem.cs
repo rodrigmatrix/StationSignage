@@ -14,7 +14,7 @@ namespace StationSignage.Systems
         private ModificationBarrier1 m_ModificationBarrier1;
         protected override void OnCreate()
         {
-            m_ModificationBarrier1 = World.GetExistingSystemManaged<ModificationBarrier1>();
+            m_ModificationBarrier1 = World.GetOrCreateSystemManaged<ModificationBarrier1>();
             m_PathReadyQuery = GetEntityQuery(new EntityQueryDesc[] {
              new(){
                  All =[
@@ -35,16 +35,15 @@ namespace StationSignage.Systems
                 return;
             }
 
-            new RoutePathReadyJob
-            {
-                m_OwnerLookup = GetComponentLookup<Owner>(true),
-                m_routeLookup = GetComponentLookup<Route>(true),
-                m_cmdBuffer = m_ModificationBarrier1.CreateCommandBuffer().AsParallelWriter(),
-                m_connectedLookup = GetComponentLookup<Connected>(true),
-                m_entityTypeHandle = GetEntityTypeHandle(),
-                m_PathUpdatedLookup = GetComponentLookup<PathUpdated>(true),
-                m_PathTargetMovedLookup = GetComponentLookup<PathTargetMoved>(true)
-            }.ScheduleParallel(m_PathReadyQuery, Dependency).Complete();
+            var job = new RoutePathReadyJob();
+            job.m_OwnerLookup = GetComponentLookup<Owner>(true);
+            job.m_routeLookup = GetComponentLookup<Route>(true);
+            job.m_cmdBuffer = m_ModificationBarrier1.CreateCommandBuffer().AsParallelWriter();
+            job.m_connectedLookup = GetComponentLookup<Connected>(true);
+            job.m_entityTypeHandle = GetEntityTypeHandle();
+            job.m_PathUpdatedLookup = GetComponentLookup<PathUpdated>(true);
+            job.m_PathTargetMovedLookup = GetComponentLookup<PathTargetMoved>(true);
+            job.ScheduleParallel(m_PathReadyQuery, Dependency).Complete();
         }
         [BurstCompile]
         private struct RoutePathReadyJob : IJobChunk

@@ -31,7 +31,7 @@ namespace StationSignage.Systems
 
         protected override void OnCreate()
         {
-            m_endFrameBarrier = World.GetExistingSystemManaged<EndFrameBarrier>();
+            m_endFrameBarrier = World.GetOrCreateSystemManaged<EndFrameBarrier>();
             m_vehiclesWithNewPathfind = GetEntityQuery([
                 ComponentType.ReadOnly<SS_DirtyVehicle>()
             ]);

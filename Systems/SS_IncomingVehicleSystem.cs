@@ -88,7 +88,7 @@ namespace StationSignage.Formulas
         {
             base.OnCreate();
             Instance = this;
-            m_simulationSystem = World.GetExistingSystemManaged<SimulationSystem>();
+            m_simulationSystem = World.GetOrCreateSystemManaged<SimulationSystem>();
             m_endFrameBarrier = World.GetOrCreateSystemManaged<EndFrameBarrier>();
             m_dirtyTvInfoVehicles = GetEntityQuery(new EntityQueryDesc[] {
                 new()

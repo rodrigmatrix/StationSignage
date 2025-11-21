@@ -56,7 +56,7 @@ namespace StationSignage.Systems
         protected override void OnCreate()
         {
             Instance = this;
-            m_ModificationBarrier1 = World.GetExistingSystemManaged<ModificationBarrier1>();
+            m_ModificationBarrier1 = World.GetOrCreateSystemManaged<ModificationBarrier1>();
             m_PathReadyQuery = GetEntityQuery([
                 ComponentType.ReadOnly<Event>(),
                 ComponentType.ReadOnly<PathUpdated>()
