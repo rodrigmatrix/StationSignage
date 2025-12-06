@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Colossal.Core;
 using Colossal.IO.AssetDatabase;
 using Colossal.Logging;
 using Game;
@@ -34,16 +35,19 @@ namespace StationSignage
             
             updateSystem.UpdateAt<LinesSystem>(SystemUpdatePhase.GameSimulation);
 
-            GameManager.instance.onGameLoadingComplete += DoWhenLoaded;
+            MainThreadDispatcher.RegisterUpdater(DoWhenLoaded);
+            (AssetDatabase<ParadoxMods>.instance.dataSource as ParadoxModsDataSource).onAfterActivePlaysetOrModStatusChanged += DoWhenLoaded;
         }
-
-        private void DoWhenLoaded(Colossal.Serialization.Entities.Purpose purpose, GameMode mode)
+        private bool isLoaded = false;
+        private void DoWhenLoaded()
         {
+            if (isLoaded) return;
             log.Info($"Loading patches");
-            DoPatches();
+            if (!DoPatches()) return;
             RegisterModFiles();
-            GameManager.instance.onGameLoadingComplete -= DoWhenLoaded;
-        }
+            isLoaded = true;
+            (AssetDatabase<ParadoxMods>.instance.dataSource as ParadoxModsDataSource).onAfterActivePlaysetOrModStatusChanged -= DoWhenLoaded;
+        }       
 
         private void RegisterModFiles()
         {
@@ -69,36 +73,31 @@ namespace StationSignage
             WEFontManagementBridge.RegisterModFonts(typeof(Mod).Assembly, fontsDirectory);
         }
 
-        private void DoPatches()
+        private bool DoPatches()
         {
-            if (AppDomain.CurrentDomain.GetAssemblies().SingleOrDefault(assembly => assembly.GetName().Name == "BelzontWE") is Assembly weAssembly)
+            var weAsset = AssetDatabase.global.GetAsset(SearchFilter<ExecutableAsset>.ByCondition(asset => asset.isLoaded && asset.name.Equals("BelzontWE")));
+            if (weAsset?.assembly is null)
             {
-                var exportedTypes = weAssembly.ExportedTypes;
-                foreach (var (type, sourceClassName) in new List<(Type, string)>() {
+                log.Error($"The module {GetType().Assembly.GetName().Name} requires Write Everywhere mod to work!");
+                return false;
+            }
+
+            var exportedTypes = weAsset.assembly.ExportedTypes;
+            foreach (var (type, sourceClassName) in new List<(Type, string)>() {
                     (typeof(WEFontManagementBridge), "FontManagementBridge"),
                     (typeof(WEImageManagementBridge), "ImageManagementBridge"),
                     (typeof(WETemplatesManagementBridge), "TemplatesManagementBridge"),
                 })
+            {
+                var targetType = exportedTypes.First(x => x.Name == sourceClassName);
+                foreach (var method in type.GetMethods(BindingFlags.Public | BindingFlags.Static))
                 {
-                    var targetType = exportedTypes.First(x => x.Name == sourceClassName);
-                    foreach (var method in type.GetMethods(BindingFlags.Public | BindingFlags.Static))
-                    {
-                        var srcMethod = targetType.GetMethod(method.Name, allFlags, null, method.GetParameters().Select(x => x.ParameterType).ToArray(), null);
-                        if (srcMethod != null)
-                        {
-                            Harmony.ReversePatch(srcMethod, new HarmonyMethod(method));
-                        }
-                        else
-                        {
-                            log.Warn($"Method not found while patching WE: {targetType.FullName} {srcMethod.Name}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))})");
-                        }
-                    }
+                    var srcMethod = targetType.GetMethod(method.Name, allFlags, null, method.GetParameters().Select(x => x.ParameterType).ToArray(), null);
+                    if (srcMethod != null) Harmony.ReversePatch(srcMethod, new HarmonyMethod(method));
+                    else log.Warn($"Method not found while patching WE: {targetType.FullName} {srcMethod.Name}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))})");
                 }
             }
-            else
-            {
-                throw new Exception("Write Everywhere dll file required for using this mod! Check if it's enabled.");
-            }
+            return true;
         }
 
         public void OnDispose()

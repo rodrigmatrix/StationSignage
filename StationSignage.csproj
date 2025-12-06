@@ -53,6 +53,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Reference Include="Colossal.AssetPipeline">
+			<Private>false</Private>
+		</Reference>
 		<Reference Update="System">
 			<Private>false</Private>
 		</Reference>
