@@ -1,4 +1,5 @@
 ﻿using BridgeWE;
+using Colossal.Core;
 using Colossal.IO.AssetDatabase;
 using Colossal.Logging;
 using Game;
@@ -47,15 +48,20 @@ namespace StationSignage
             updateSystem.UpdateAfter<SS_PlatformMappingSystem>(SystemUpdatePhase.UIUpdate);
             updateSystem.UpdateAfter<SS_IncomingVehicleSystem>(SystemUpdatePhase.MainLoop);
             updateSystem.UpdateAfter<SS_ApplyRouteWatchSystem>(SystemUpdatePhase.ApplyTool);
+            updateSystem.UpdateAfter<SS_BuildingLineCacheSystem>(SystemUpdatePhase.MainLoop);
 
-            GameManager.instance.RegisterUpdater(DoWhenLoaded);
+            MainThreadDispatcher.RegisterUpdater(DoWhenLoaded);
+            (AssetDatabase<ParadoxMods>.instance.dataSource as ParadoxModsDataSource).onAfterActivePlaysetOrModStatusChanged += DoWhenLoaded;
         }
-
+        private bool isLoaded = false;
         private void DoWhenLoaded()
         {
+            if (isLoaded) return;
             log.Info($"Loading patches");
             if (!DoPatches()) return;
             RegisterModFiles();
+            isLoaded = true;
+            (AssetDatabase<ParadoxMods>.instance.dataSource as ParadoxModsDataSource).onAfterActivePlaysetOrModStatusChanged -= DoWhenLoaded;
         }
 
         private void RegisterModFiles()
@@ -143,12 +149,13 @@ namespace StationSignage
                 }
                 else
                 {
-                    throw new Exception("No WE Found!");
+                    log.Warn("Write Everywhere dll file required for using this mod! Check if it's enabled.");
+                    return false;
                 }
             }
             catch
             {
-                log.Error("Write Everywhere dll file required for using this mod! Check if it's enabled.");
+                log.Warn("Write Everywhere dll file required for using this mod! Check if it's enabled.");
                 return false;
             }
             return true;

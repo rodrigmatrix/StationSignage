@@ -1,5 +1,4 @@
-﻿using Colossal;
-using Colossal.Entities;
+﻿using Colossal.Entities;
 using Game.Common;
 using Game.Pathfind;
 using Game.Routes;
@@ -11,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Entities;
+using Color = UnityEngine.Color;
 
 namespace StationSignage.Formulas
 {
@@ -163,6 +163,14 @@ namespace StationSignage.Formulas
                     Settings.LineOperatorCityOptions.London => isMetro ? ServiceOperator.UndergroundOperator : ServiceOperator.Default,
                     _ => ServiceOperator.Default
                 };
+        }
+
+
+        public static Color GetMainStationColor(Entity buildingRef, Dictionary<string, string> vars)
+        {
+            var lineList = SS_BuildingLineCacheSystem.Instance.GetLines(buildingRef, true);
+            if (lineList == null || lineList.Count != 1) return Color.white;
+            return lineList[0].Color;
         }
     }
 }
