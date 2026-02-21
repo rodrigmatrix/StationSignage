@@ -1293,7 +1293,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
@@ -1400,7 +1400,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
@@ -1705,7 +1705,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
@@ -1812,7 +1812,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
@@ -2117,7 +2117,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
@@ -2224,7 +2224,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
@@ -3066,7 +3066,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
@@ -3172,7 +3172,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
@@ -3476,7 +3476,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
@@ -3582,7 +3582,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
@@ -3886,7 +3886,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
@@ -3992,7 +3992,7 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
               <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
@@ -4057,7 +4057,7 @@
         <scale x="0" y="0" z="0" />
         <mustDraw>0</mustDraw>
         <instanceCount>0</instanceCount>
-        <arrayInstances x="0" y="0" z="0" />
+        <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <textMesh fontName="">

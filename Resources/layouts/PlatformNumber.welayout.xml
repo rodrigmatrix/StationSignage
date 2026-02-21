@@ -1,7 +1,7 @@
 <WELayout>
   <self itemName="Platform">
-    <transform alignment="Left" arrayAxisOrder="XYZ">
-      <offsetPosition x="-4.855999" y="21.5299988" z="0.00299999863" />
+    <transform pivot="MiddleRight" alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="-4.855999" y="6.90199757" z="0.00299999863" />
       <offsetRotation x="-0" y="0" z="0" />
       <scale x="0" y="0" z="1" />
       <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>

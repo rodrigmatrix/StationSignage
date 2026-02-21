@@ -92,11 +92,7 @@ public class DisplayFormulas
 
     public static string GetPlatformImage(Entity buildingRef, Dictionary<string, string> vars)
     {
-        if (!vars.TryGetValue("vPlatform", out var platformStr))
-        {
-            vars.TryGetValue("platform", out platformStr);
-        }
-        return "Circle" + platformStr;
+        return "Circle" + PlatformFormulas.GetPlatformInt(vars);
     }
 
     public static string GetWelcomeMessage(TransportType lineType)

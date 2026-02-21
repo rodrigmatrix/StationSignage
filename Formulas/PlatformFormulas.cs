@@ -45,9 +45,12 @@ namespace StationSignage.Formulas
             return Entity.Null; // Return null if no matching platform is found
         }
 
-        private static int? GetPlatformInt(Dictionary<string, string> vars)
+        public static int? GetPlatformInt(Dictionary<string, string> vars)
         {
-            var platformString = vars.GetValueOrDefault(LinesFormulas.PLATFORM_VAR);
+            if (!vars.TryGetValue("vPlatform", out var platformString))
+            {
+                vars.TryGetValue("platform", out platformString);
+            }
             var platformPosition = vars.GetValueOrDefault("platformPosition");
             platformString = platformPosition switch
             {
@@ -173,9 +176,11 @@ namespace StationSignage.Formulas
             if (!EntityManager.TryGetBuffer<SS_PlatformMappingLink>(building, true, out var buffer)) return transfers;
             for (var i = 0; i < buffer.Length; i++)
             {
-                if (platformInt != null && platformInt != i)
+                var platformData = buffer[i].platformData;
+                var hasLine = GetFirstLineOrDefault(platformData) != Entity.Null;
+                if (platformInt != null && platformInt != i && hasLine)
                 {
-                    transfers.Add(buffer[i].platformData);
+                    transfers.Add(platformData);
                 }
             }
 
