@@ -1,8 +1,8 @@
 <WELayout>
   <children>
-    <self itemName="Platform 4 5 Center">
+    <self itemName="Platform 2 3 Center">
       <transform alignment="Left" arrayAxisOrder="XYZ">
-        <offsetPosition x="-6.819006" y="-8.7820015" z="-31.9730034" />
+        <offsetPosition x="-6.819006" y="-8.7820015" z="-16.266" />
         <offsetRotation x="-0" y="0" z="0" />
         <scale x="0" y="0" z="1" />
         <mustDraw>0</mustDraw>
@@ -30,7 +30,7 @@
           <offsetPosition x="20.354" y="0.431" z="1.48299992" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw>0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -51,11 +51,11 @@
       </self>
       <children>
         <self itemName="Train First Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
+          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
             <offsetPosition x="1.550999" y="-0.662" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -171,11 +171,11 @@
       </children>
       <children>
         <self itemName="Train Last Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
+          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
             <offsetPosition x="74.996994" y="-0.651" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -292,11 +292,11 @@
       </children>
       <children>
         <self itemName="Train First Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
+          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
             <offsetPosition x="32.7609978" y="-0.662" z="2.127" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -412,11 +412,11 @@
       </children>
       <children>
         <self itemName="Train Last Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
+          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
             <offsetPosition x="95.884964" y="-2.06200027" z="1.33600008" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -531,7 +531,7 @@
         </children>
         <variable key="trainHalf" value="2" />
       </children>
-      <variable key="platform" value="3" />
+      <variable key="platform" value="1" />
     </children>
     <children>
       <self itemName="Platform 3">
@@ -560,11 +560,11 @@
       </self>
       <children>
         <self itemName="Train First Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
+          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
             <offsetPosition x="3.43699956" y="-0.662" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -680,11 +680,11 @@
       </children>
       <children>
         <self itemName="Train Last Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
+          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
             <offsetPosition x="76.9009857" y="-0.662" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -801,11 +801,11 @@
       </children>
       <children>
         <self itemName="Train Last Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
+          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
             <offsetPosition x="45.64098" y="-0.692000031" z="1.98200011" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -922,11 +922,11 @@
       </children>
       <children>
         <self itemName="Train First Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
+          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
             <offsetPosition x="-17.4150066" y="-2.00199986" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -1041,15 +1041,15 @@
         </children>
       </children>
       <variable key="lineType" value="Train" />
-      <variable key="platform" value="4" />
+      <variable key="platform" value="2" />
     </children>
     <children>
       <self itemName="Station Name Middle">
-        <transform alignment="Left" arrayAxisOrder="XYZ">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
           <offsetPosition x="-13.2229958" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Utils.LinesFormulas;CenterPlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;CenterPlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -1253,7 +1253,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -1294,7 +1294,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -1343,7 +1342,7 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle4" />
+          <variable key="images" value="Circle2" />
         </children>
         <variable key="platformPosition" value="right" />
       </children>
@@ -1360,7 +1359,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -1401,7 +1400,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -1450,18 +1448,18 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle5" />
+          <variable key="images" value="Circle3" />
         </children>
         <variable key="platformPosition" value="left" />
       </children>
     </children>
     <children>
       <self itemName="Station Name Start">
-        <transform alignment="Left" arrayAxisOrder="XYZ">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
           <offsetPosition x="-39.81699" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Utils.LinesFormulas;CenterPlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;CenterPlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -1665,7 +1663,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -1706,7 +1704,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -1755,7 +1752,7 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle4" />
+          <variable key="images" value="Circle2" />
         </children>
         <variable key="platformPosition" value="right" />
       </children>
@@ -1772,7 +1769,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -1813,7 +1810,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -1862,18 +1858,18 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle5" />
+          <variable key="images" value="Circle3" />
         </children>
         <variable key="platformPosition" value="left" />
       </children>
     </children>
     <children>
       <self itemName="Station Name End">
-        <transform alignment="Left" arrayAxisOrder="XYZ">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
           <offsetPosition x="8.131013" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Utils.LinesFormulas;CenterPlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;CenterPlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -2077,7 +2073,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -2118,7 +2114,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -2167,7 +2162,7 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle4" />
+          <variable key="images" value="Circle2" />
         </children>
         <variable key="platformPosition" value="right" />
       </children>
@@ -2184,7 +2179,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -2225,7 +2220,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -2274,19 +2268,19 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle5" />
+          <variable key="images" value="Circle3" />
         </children>
         <variable key="platformPosition" value="left" />
       </children>
     </children>
     <variable key="lineType" value="Train" />
-    <variable key="platformLeft" value="5" />
-    <variable key="platformRight" value="4" />
+    <variable key="platformLeft" value="2" />
+    <variable key="platformRight" value="1" />
   </children>
   <children>
-    <self itemName="Platform 6">
+    <self itemName="Platform 1">
       <transform alignment="Left" arrayAxisOrder="XYZ">
-        <offsetPosition x="-6.819006" y="-8.7820015" z="-48.063" />
+        <offsetPosition x="-4.66900444" y="-8.632" z="2.564" />
         <offsetRotation x="-0" y="0" z="0" />
         <scale x="0" y="0" z="1" />
         <mustDraw>0</mustDraw>
@@ -2309,12 +2303,12 @@
       </defaultStyle>
     </self>
     <children>
-      <self itemName="Platform 6">
-        <transform alignment="Left" arrayAxisOrder="XYZ">
-          <offsetPosition x="20.354" y="0.431" z="1.77299988" />
-          <offsetRotation x="-0" y="0" z="0" />
+      <self itemName="Platform 1 Panel">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="19.810997" y="0.431" z="-1.50100148" />
+          <offsetRotation x="-0" y="180" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -2336,10 +2330,130 @@
       <children>
         <self itemName="Train First Half">
           <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="1.550999" y="-0.662" z="1.437" />
+            <offsetPosition x="76.9009857" y="-0.64199996" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw>0</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <whiteMesh />
+          <defaultStyle>
+            <color>FFFFFFFF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Holder">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="-39.5" y="14.1460009" z="-1.26899993" />
+              <offsetRotation x="-0" y="90" z="0" />
+              <scale x="0" y="0" z="1" />
+              <mustDraw>0</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color>000000FF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+          <children>
+            <self itemName="Holder">
+              <transform alignment="Left" arrayAxisOrder="XYZ">
+                <offsetPosition x="0" y="0" z="0" />
+                <offsetRotation x="-0" y="180" z="0" />
+                <scale x="0.05" y="1" z="1" />
+                <mustDraw>0</mustDraw>
+                <instanceCount>-1</instanceCount>
+                <arrayInstances x="1" y="1" z="1" />
+                <arraySpacing x="0" y="0" z="0" />
+              </transform>
+              <whiteMesh />
+              <defaultStyle>
+                <color>000000FF</color>
+                <emissiveColor>FFFFFFFF</emissiveColor>
+                <metallic>0</metallic>
+                <smoothness>0</smoothness>
+                <emissiveIntensity>0</emissiveIntensity>
+                <emissiveExposureWeight>0</emissiveExposureWeight>
+                <coatStrength>0</coatStrength>
+                <colorMask1>FFFFFF</colorMask1>
+                <colorMask2>FFFFFF</colorMask2>
+                <colorMask3>FFFFFF</colorMask3>
+              </defaultStyle>
+            </self>
+          </children>
+          <children>
+            <self itemName="Holder">
+              <transform alignment="Left" arrayAxisOrder="XYZ">
+                <offsetPosition x="0" y="0" z="0.01" />
+                <offsetRotation x="-0" y="0" z="0" />
+                <scale x="0.05" y="1" z="1" />
+                <mustDraw>0</mustDraw>
+                <instanceCount>-1</instanceCount>
+                <arrayInstances x="1" y="1" z="1" />
+                <arraySpacing x="0" y="0" z="0" />
+              </transform>
+              <whiteMesh />
+              <defaultStyle>
+                <color>000000FF</color>
+                <emissiveColor>FFFFFFFF</emissiveColor>
+                <metallic>0</metallic>
+                <smoothness>0</smoothness>
+                <emissiveIntensity>0</emissiveIntensity>
+                <emissiveExposureWeight>0</emissiveExposureWeight>
+                <coatStrength>0</coatStrength>
+                <colorMask1>FFFFFF</colorMask1>
+                <colorMask2>FFFFFF</colorMask2>
+                <colorMask3>FFFFFF</colorMask3>
+              </defaultStyle>
+            </self>
+          </children>
+        </children>
+        <children>
+          <self itemName="TV">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="0" y="0" z="0" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0" y="0" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <layoutMesh>
+              <layout>StationSignage:NextTrainTV</layout>
+            </layoutMesh>
+          </self>
+        </children>
+      </children>
+      <children>
+        <self itemName="Train First Half">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="45.64098" y="-0.652" z="1.56200016" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="0" y="0" z="1" />
+            <mustDraw>0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -2456,10 +2570,10 @@
       <children>
         <self itemName="Train Last Half">
           <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="74.996994" y="-0.651" z="1.41200006" />
+            <offsetPosition x="-15.2680044" y="-2.022" z="5.157" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+            <mustDraw>0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -2481,7 +2595,7 @@
         <children>
           <self itemName="Holder">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-39.5" y="14.1460009" z="-1.26899993" />
+              <offsetPosition x="-39.5" y="12.0160017" z="-1.26899993" />
               <offsetRotation x="-0" y="90" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>0</mustDraw>
@@ -2508,7 +2622,7 @@
               <transform alignment="Left" arrayAxisOrder="XYZ">
                 <offsetPosition x="0" y="0" z="0" />
                 <offsetRotation x="-0" y="180" z="0" />
-                <scale x="0.05" y="1" z="1" />
+                <scale x="0.05" y="1.8" z="1" />
                 <mustDraw>0</mustDraw>
                 <instanceCount>-1</instanceCount>
                 <arrayInstances x="1" y="1" z="1" />
@@ -2534,7 +2648,7 @@
               <transform alignment="Left" arrayAxisOrder="XYZ">
                 <offsetPosition x="0" y="0" z="0.01" />
                 <offsetRotation x="-0" y="0" z="0" />
-                <scale x="0.05" y="1" z="1" />
+                <scale x="0.05" y="1.8" z="1" />
                 <mustDraw>0</mustDraw>
                 <instanceCount>-1</instanceCount>
                 <arrayInstances x="1" y="1" z="1" />
@@ -2575,129 +2689,9 @@
         <variable key="trainHalf" value="2" />
       </children>
       <children>
-        <self itemName="Train First Half">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="32.7609978" y="-0.662" z="2.127" />
-            <offsetRotation x="-0" y="0" z="0" />
-            <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
-            <instanceCount>-1</instanceCount>
-            <arrayInstances x="1" y="1" z="1" />
-            <arraySpacing x="0" y="0" z="0" />
-          </transform>
-          <whiteMesh />
-          <defaultStyle>
-            <color>FFFFFFFF</color>
-            <emissiveColor>FFFFFFFF</emissiveColor>
-            <metallic>0</metallic>
-            <smoothness>0</smoothness>
-            <emissiveIntensity>0</emissiveIntensity>
-            <emissiveExposureWeight>0</emissiveExposureWeight>
-            <coatStrength>0</coatStrength>
-            <colorMask1>FFFFFF</colorMask1>
-            <colorMask2>FFFFFF</colorMask2>
-            <colorMask3>FFFFFF</colorMask3>
-          </defaultStyle>
-        </self>
-        <children>
-          <self itemName="Holder">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-39.5" y="14.1460009" z="-1.26899993" />
-              <offsetRotation x="-0" y="90" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>0</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <whiteMesh />
-            <defaultStyle>
-              <color>000000FF</color>
-              <emissiveColor>FFFFFFFF</emissiveColor>
-              <metallic>0</metallic>
-              <smoothness>0</smoothness>
-              <emissiveIntensity>0</emissiveIntensity>
-              <emissiveExposureWeight>0</emissiveExposureWeight>
-              <coatStrength>0</coatStrength>
-              <colorMask1>FFFFFF</colorMask1>
-              <colorMask2>FFFFFF</colorMask2>
-              <colorMask3>FFFFFF</colorMask3>
-            </defaultStyle>
-          </self>
-          <children>
-            <self itemName="Holder">
-              <transform alignment="Left" arrayAxisOrder="XYZ">
-                <offsetPosition x="0" y="0" z="0" />
-                <offsetRotation x="-0" y="180" z="0" />
-                <scale x="0.05" y="1" z="1" />
-                <mustDraw>0</mustDraw>
-                <instanceCount>-1</instanceCount>
-                <arrayInstances x="1" y="1" z="1" />
-                <arraySpacing x="0" y="0" z="0" />
-              </transform>
-              <whiteMesh />
-              <defaultStyle>
-                <color>000000FF</color>
-                <emissiveColor>FFFFFFFF</emissiveColor>
-                <metallic>0</metallic>
-                <smoothness>0</smoothness>
-                <emissiveIntensity>0</emissiveIntensity>
-                <emissiveExposureWeight>0</emissiveExposureWeight>
-                <coatStrength>0</coatStrength>
-                <colorMask1>FFFFFF</colorMask1>
-                <colorMask2>FFFFFF</colorMask2>
-                <colorMask3>FFFFFF</colorMask3>
-              </defaultStyle>
-            </self>
-          </children>
-          <children>
-            <self itemName="Holder">
-              <transform alignment="Left" arrayAxisOrder="XYZ">
-                <offsetPosition x="0" y="0" z="0.01" />
-                <offsetRotation x="-0" y="0" z="0" />
-                <scale x="0.05" y="1" z="1" />
-                <mustDraw>0</mustDraw>
-                <instanceCount>-1</instanceCount>
-                <arrayInstances x="1" y="1" z="1" />
-                <arraySpacing x="0" y="0" z="0" />
-              </transform>
-              <whiteMesh />
-              <defaultStyle>
-                <color>000000FF</color>
-                <emissiveColor>FFFFFFFF</emissiveColor>
-                <metallic>0</metallic>
-                <smoothness>0</smoothness>
-                <emissiveIntensity>0</emissiveIntensity>
-                <emissiveExposureWeight>0</emissiveExposureWeight>
-                <coatStrength>0</coatStrength>
-                <colorMask1>FFFFFF</colorMask1>
-                <colorMask2>FFFFFF</colorMask2>
-                <colorMask3>FFFFFF</colorMask3>
-              </defaultStyle>
-            </self>
-          </children>
-        </children>
-        <children>
-          <self itemName="TV">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="0" y="0" z="0" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <layoutMesh>
-              <layout>StationSignage:NextTrainTV</layout>
-            </layoutMesh>
-          </self>
-        </children>
-      </children>
-      <children>
         <self itemName="Train Last Half">
           <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="95.884964" y="-2.06200027" z="1.33600008" />
+            <offsetPosition x="11.7619953" y="-2.022" z="5.157" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
             <mustDraw>0</mustDraw>
@@ -2722,7 +2716,7 @@
         <children>
           <self itemName="Holder">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-39.5" y="11.8460016" z="-1.26899993" />
+              <offsetPosition x="-39.5" y="12.0160017" z="-1.26899993" />
               <offsetRotation x="-0" y="90" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>0</mustDraw>
@@ -2817,12 +2811,12 @@
       </children>
     </children>
     <children>
-      <self itemName="Station Name Middle">
-        <transform alignment="Left" arrayAxisOrder="XYZ">
-          <offsetPosition x="-13.2229958" y="1.36400032" z="0" />
+      <self itemName="Station Name Start">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="-49.27599" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -3026,7 +3020,415 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Exit">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="5.281002" y="0.05500001" z="0.00299999863" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0" y="0" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <layoutMesh>
+              <layout>StationSignage:ExitLeft</layout>
+            </layoutMesh>
+          </self>
+          <variable key="images" value="CircleB,CircleA,LeftArrow" />
+        </children>
+        <children>
+          <self itemName="Emergency Exit">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="-6.350001" y="0" z="0.009000001" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0.615" y="0.615" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <imageMesh atlas="StationSignage:main">
+              <image>EmergencyExitLeft</image>
+            </imageMesh>
+            <defaultStyle>
+              <color>FFFFFFFF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Transfer">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="-4.161999" y="0.178000018" z="0.00299999863" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0" y="0" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <layoutMesh>
+              <layout>StationSignage:TransferLineSign</layout>
+            </layoutMesh>
+          </self>
+          <variable key="images" value="EscalatorsRight,TopRightArrow" />
+        </children>
+        <children>
+          <self itemName="Platform">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="3.29300117" y="0.110000007" z="0.00299999863" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0" y="0" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <layoutMesh>
+              <layout>StationSignage:PlatformNumber</layout>
+            </layoutMesh>
+          </self>
+          <variable key="images" value="Circle1" />
+        </children>
+      </children>
+      <children>
+        <self itemName="Left">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="40.084" y="11.703" z="-0.09000003" />
+            <offsetRotation x="-0" y="180" z="0" />
+            <scale x="0" y="0" z="1" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <whiteMesh />
+          <defaultStyle>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Exit">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="-3.43199778" y="0.06500001" z="0.00299999863" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0" y="0" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <layoutMesh>
+              <layout>StationSignage:ExitRight</layout>
+            </layoutMesh>
+          </self>
+          <variable key="images" value="CircleA,CircleB,RightArrow" />
+        </children>
+        <children>
+          <self itemName="Emergency Exit">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="6.213" y="0" z="0.009000001" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0.615" y="0.615" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <imageMesh atlas="StationSignage:main">
+              <image>EmergencyExitRight</image>
+            </imageMesh>
+            <defaultStyle>
+              <color>FFFFFFFF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Transfer">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="3.59300065" y="0.248000026" z="0.00299999863" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0" y="0" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <layoutMesh>
+              <layout>StationSignage:TransferLineSign</layout>
+            </layoutMesh>
+          </self>
+          <variable key="images" value="TopLeftArrow,EscalatorsLeft" />
+        </children>
+        <children>
+          <self itemName="Platform">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="-6.0719986" y="0.110000007" z="0.00299999863" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0" y="0" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <layoutMesh>
+              <layout>StationSignage:PlatformNumber</layout>
+            </layoutMesh>
+          </self>
+          <variable key="images" value="Circle1" />
+        </children>
+      </children>
+    </children>
+    <children>
+      <self itemName="Station Name Middle">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="-10.1559906" y="1.36400032" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0" y="0" z="1" />
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <whiteMesh />
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+      <children>
+        <self itemName="Holder Left">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="33.71799" y="12.5230007" z="0.132998571" />
+            <offsetRotation x="-0" y="0" z="90" />
+            <scale x="0" y="0" z="1" />
+            <mustDraw>0</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <whiteMesh />
+          <defaultStyle>
+            <color>000000FF</color>
+            <emissiveColor>000000FF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Holder">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="0" y="0" z="0" />
+              <offsetRotation x="-0" y="180" z="0" />
+              <scale x="1.1" y="0.06" z="1" />
+              <mustDraw>0</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color>000000FF</color>
+              <emissiveColor>000000FF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Holder">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="0" y="0" z="0.003" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="1.1" y="0.06" z="1" />
+              <mustDraw>0</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color>000000FF</color>
+              <emissiveColor>000000FF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+      </children>
+      <children>
+        <self itemName="Holder Right">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="46.4299965" y="12.5040007" z="0.147998482" />
+            <offsetRotation x="-0" y="0" z="90" />
+            <scale x="0" y="0" z="1" />
+            <mustDraw>0</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <whiteMesh />
+          <defaultStyle>
+            <color>000000FF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Holder">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="-0.00999999" y="0" z="8.74230466E-10" />
+              <offsetRotation x="-0" y="180" z="0" />
+              <scale x="1.1" y="0.06" z="1" />
+              <mustDraw>0</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color>000000FF</color>
+              <emissiveColor>000000FF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Holder">
+            <transform alignment="Left" arrayAxisOrder="XYZ">
+              <offsetPosition x="0" y="0" z="0.003" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="1.1" y="0.06" z="1" />
+              <mustDraw>0</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color>000000FF</color>
+              <emissiveColor>000000FF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+      </children>
+      <children>
+        <self itemName="Sign">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="0" y="0" z="0" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="0" y="0" z="1" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <layoutMesh>
+            <layout>StationSignage:StationSignLarge</layout>
+          </layoutMesh>
+        </self>
+      </children>
+      <children>
+        <self itemName="Right">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="40.084" y="11.703" z="0.297999978" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="0" y="0" z="1" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <whiteMesh />
+          <defaultStyle>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -3053,7 +3455,7 @@
               <layout>StationSignage:ExitRight</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="CircleA,CircleB,TopRightArrow" />
+          <variable key="images" value="CircleA,CircleB,RightArrow" />
         </children>
         <children>
           <self itemName="Emergency Exit">
@@ -3067,7 +3469,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -3116,7 +3517,7 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle6" />
+          <variable key="images" value="Circle1" />
         </children>
       </children>
       <children>
@@ -3132,7 +3533,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -3147,7 +3548,7 @@
         <children>
           <self itemName="Exit">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-4.213998" y="0.06500001" z="0.00299999863" />
+              <offsetPosition x="-3.92799783" y="0.06500001" z="0.00299999863" />
               <offsetRotation x="-0" y="0" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>1</mustDraw>
@@ -3159,7 +3560,7 @@
               <layout>StationSignage:ExitLeft</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="CircleB,CircleA,TopLeftArrow" />
+          <variable key="images" value="CircleB,CircleA,LeftArrow" />
         </children>
         <children>
           <self itemName="Emergency Exit">
@@ -3173,7 +3574,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -3193,7 +3593,7 @@
         <children>
           <self itemName="Transfer">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="3.20200062" y="0.248000026" z="0.00299999863" />
+              <offsetPosition x="3.62800074" y="0.248000026" z="0.00299999863" />
               <offsetRotation x="-0" y="0" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>1</mustDraw>
@@ -3205,7 +3605,7 @@
               <layout>StationSignage:TransferLineSign</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="TopLeftArrow" />
+          <variable key="images" value="TopLeftArrow, EscalatorsLeft" />
         </children>
         <children>
           <self itemName="Platform">
@@ -3222,427 +3622,17 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle6" />
-        </children>
-      </children>
-    </children>
-    <children>
-      <self itemName="Station Name Start">
-        <transform alignment="Left" arrayAxisOrder="XYZ">
-          <offsetPosition x="-39.81699" y="1.36400032" z="0" />
-          <offsetRotation x="-0" y="0" z="0" />
-          <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
-          <instanceCount>-1</instanceCount>
-          <arrayInstances x="1" y="1" z="1" />
-          <arraySpacing x="0" y="0" z="0" />
-        </transform>
-        <whiteMesh />
-        <defaultStyle>
-          <color>FFFFFFFF</color>
-          <emissiveColor>FFFFFFFF</emissiveColor>
-          <metallic>0</metallic>
-          <smoothness>0</smoothness>
-          <emissiveIntensity>0</emissiveIntensity>
-          <emissiveExposureWeight>0</emissiveExposureWeight>
-          <coatStrength>0</coatStrength>
-          <colorMask1>FFFFFF</colorMask1>
-          <colorMask2>FFFFFF</colorMask2>
-          <colorMask3>FFFFFF</colorMask3>
-        </defaultStyle>
-      </self>
-      <children>
-        <self itemName="Holder Left">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="33.71799" y="12.5230007" z="0.132998571" />
-            <offsetRotation x="-0" y="0" z="90" />
-            <scale x="0" y="0" z="1" />
-            <mustDraw>0</mustDraw>
-            <instanceCount>-1</instanceCount>
-            <arrayInstances x="1" y="1" z="1" />
-            <arraySpacing x="0" y="0" z="0" />
-          </transform>
-          <whiteMesh />
-          <defaultStyle>
-            <color>000000FF</color>
-            <emissiveColor>000000FF</emissiveColor>
-            <metallic>0</metallic>
-            <smoothness>0</smoothness>
-            <emissiveIntensity>0</emissiveIntensity>
-            <emissiveExposureWeight>0</emissiveExposureWeight>
-            <coatStrength>0</coatStrength>
-            <colorMask1>FFFFFF</colorMask1>
-            <colorMask2>FFFFFF</colorMask2>
-            <colorMask3>FFFFFF</colorMask3>
-          </defaultStyle>
-        </self>
-        <children>
-          <self itemName="Holder">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="0" y="0" z="0" />
-              <offsetRotation x="-0" y="180" z="0" />
-              <scale x="1.1" y="0.06" z="1" />
-              <mustDraw>0</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <whiteMesh />
-            <defaultStyle>
-              <color>000000FF</color>
-              <emissiveColor>000000FF</emissiveColor>
-              <metallic>0</metallic>
-              <smoothness>0</smoothness>
-              <emissiveIntensity>0</emissiveIntensity>
-              <emissiveExposureWeight>0</emissiveExposureWeight>
-              <coatStrength>0</coatStrength>
-              <colorMask1>FFFFFF</colorMask1>
-              <colorMask2>FFFFFF</colorMask2>
-              <colorMask3>FFFFFF</colorMask3>
-            </defaultStyle>
-          </self>
-        </children>
-        <children>
-          <self itemName="Holder">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="0" y="0" z="0.003" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="1.1" y="0.06" z="1" />
-              <mustDraw>0</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <whiteMesh />
-            <defaultStyle>
-              <color>000000FF</color>
-              <emissiveColor>000000FF</emissiveColor>
-              <metallic>0</metallic>
-              <smoothness>0</smoothness>
-              <emissiveIntensity>0</emissiveIntensity>
-              <emissiveExposureWeight>0</emissiveExposureWeight>
-              <coatStrength>0</coatStrength>
-              <colorMask1>FFFFFF</colorMask1>
-              <colorMask2>FFFFFF</colorMask2>
-              <colorMask3>FFFFFF</colorMask3>
-            </defaultStyle>
-          </self>
-        </children>
-      </children>
-      <children>
-        <self itemName="Holder Right">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="46.4299965" y="12.5040007" z="0.147998482" />
-            <offsetRotation x="-0" y="0" z="90" />
-            <scale x="0" y="0" z="1" />
-            <mustDraw>0</mustDraw>
-            <instanceCount>-1</instanceCount>
-            <arrayInstances x="1" y="1" z="1" />
-            <arraySpacing x="0" y="0" z="0" />
-          </transform>
-          <whiteMesh />
-          <defaultStyle>
-            <color>000000FF</color>
-            <emissiveColor>FFFFFFFF</emissiveColor>
-            <metallic>0</metallic>
-            <smoothness>0</smoothness>
-            <emissiveIntensity>0</emissiveIntensity>
-            <emissiveExposureWeight>0</emissiveExposureWeight>
-            <coatStrength>0</coatStrength>
-            <colorMask1>FFFFFF</colorMask1>
-            <colorMask2>FFFFFF</colorMask2>
-            <colorMask3>FFFFFF</colorMask3>
-          </defaultStyle>
-        </self>
-        <children>
-          <self itemName="Holder">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-0.00999999" y="0" z="8.74230466E-10" />
-              <offsetRotation x="-0" y="180" z="0" />
-              <scale x="1.1" y="0.06" z="1" />
-              <mustDraw>0</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <whiteMesh />
-            <defaultStyle>
-              <color>000000FF</color>
-              <emissiveColor>000000FF</emissiveColor>
-              <metallic>0</metallic>
-              <smoothness>0</smoothness>
-              <emissiveIntensity>0</emissiveIntensity>
-              <emissiveExposureWeight>0</emissiveExposureWeight>
-              <coatStrength>0</coatStrength>
-              <colorMask1>FFFFFF</colorMask1>
-              <colorMask2>FFFFFF</colorMask2>
-              <colorMask3>FFFFFF</colorMask3>
-            </defaultStyle>
-          </self>
-        </children>
-        <children>
-          <self itemName="Holder">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="0" y="0" z="0.003" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="1.1" y="0.06" z="1" />
-              <mustDraw>0</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <whiteMesh />
-            <defaultStyle>
-              <color>000000FF</color>
-              <emissiveColor>000000FF</emissiveColor>
-              <metallic>0</metallic>
-              <smoothness>0</smoothness>
-              <emissiveIntensity>0</emissiveIntensity>
-              <emissiveExposureWeight>0</emissiveExposureWeight>
-              <coatStrength>0</coatStrength>
-              <colorMask1>FFFFFF</colorMask1>
-              <colorMask2>FFFFFF</colorMask2>
-              <colorMask3>FFFFFF</colorMask3>
-            </defaultStyle>
-          </self>
-        </children>
-      </children>
-      <children>
-        <self itemName="Sign">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="0" y="0" z="0" />
-            <offsetRotation x="-0" y="0" z="0" />
-            <scale x="0" y="0" z="1" />
-            <mustDraw>1</mustDraw>
-            <instanceCount>-1</instanceCount>
-            <arrayInstances x="1" y="1" z="1" />
-            <arraySpacing x="0" y="0" z="0" />
-          </transform>
-          <layoutMesh>
-            <layout>StationSignage:StationSignLarge</layout>
-          </layoutMesh>
-        </self>
-      </children>
-      <children>
-        <self itemName="Right">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="40.084" y="11.703" z="0.297999978" />
-            <offsetRotation x="-0" y="0" z="0" />
-            <scale x="0" y="0" z="1" />
-            <mustDraw>1</mustDraw>
-            <instanceCount>-1</instanceCount>
-            <arrayInstances x="1" y="1" z="1" />
-            <arraySpacing x="0" y="0" z="0" />
-          </transform>
-          <whiteMesh />
-          <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
-            <emissiveColor>FFFFFFFF</emissiveColor>
-            <metallic>0</metallic>
-            <smoothness>0</smoothness>
-            <emissiveIntensity>0</emissiveIntensity>
-            <emissiveExposureWeight>0</emissiveExposureWeight>
-            <coatStrength>0</coatStrength>
-            <colorMask1>FFFFFF</colorMask1>
-            <colorMask2>FFFFFF</colorMask2>
-            <colorMask3>FFFFFF</colorMask3>
-          </defaultStyle>
-        </self>
-        <children>
-          <self itemName="Exit">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="5.917002" y="0.05500001" z="0.00299999863" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <layoutMesh>
-              <layout>StationSignage:ExitRight</layout>
-            </layoutMesh>
-          </self>
-          <variable key="images" value="CircleA,CircleB,TopRightArrow" />
-        </children>
-        <children>
-          <self itemName="Emergency Exit">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-6.580001" y="0" z="0.009000001" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0.615" y="0.615" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
-              <image>EmergencyExitRight</image>
-            </imageMesh>
-            <defaultStyle>
-              <color>FFFFFFFF</color>
-              <emissiveColor>FFFFFFFF</emissiveColor>
-              <metallic>0</metallic>
-              <smoothness>0</smoothness>
-              <emissiveIntensity>0</emissiveIntensity>
-              <emissiveExposureWeight>0</emissiveExposureWeight>
-              <coatStrength>0</coatStrength>
-              <colorMask1>FFFFFF</colorMask1>
-              <colorMask2>FFFFFF</colorMask2>
-              <colorMask3>FFFFFF</colorMask3>
-            </defaultStyle>
-          </self>
-        </children>
-        <children>
-          <self itemName="Transfer">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-5.12099934" y="0.178000018" z="0.00299999863" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <layoutMesh>
-              <layout>StationSignage:TransferLineSign</layout>
-            </layoutMesh>
-          </self>
-          <variable key="images" value="EscalatorsRight,TopRightArrow" />
-        </children>
-        <children>
-          <self itemName="Platform">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="3.10100126" y="0.110000007" z="0.00299999863" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <layoutMesh>
-              <layout>StationSignage:PlatformNumber</layout>
-            </layoutMesh>
-          </self>
-          <variable key="images" value="Circle6" />
-        </children>
-      </children>
-      <children>
-        <self itemName="Left">
-          <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="40.084" y="11.703" z="-0.09000003" />
-            <offsetRotation x="-0" y="180" z="0" />
-            <scale x="0" y="0" z="1" />
-            <mustDraw>1</mustDraw>
-            <instanceCount>-1</instanceCount>
-            <arrayInstances x="1" y="1" z="1" />
-            <arraySpacing x="0" y="0" z="0" />
-          </transform>
-          <whiteMesh />
-          <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
-            <emissiveColor>FFFFFFFF</emissiveColor>
-            <metallic>0</metallic>
-            <smoothness>0</smoothness>
-            <emissiveIntensity>0</emissiveIntensity>
-            <emissiveExposureWeight>0</emissiveExposureWeight>
-            <coatStrength>0</coatStrength>
-            <colorMask1>FFFFFF</colorMask1>
-            <colorMask2>FFFFFF</colorMask2>
-            <colorMask3>FFFFFF</colorMask3>
-          </defaultStyle>
-        </self>
-        <children>
-          <self itemName="Exit">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-6.61899757" y="0.06500001" z="0.00299999863" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <layoutMesh>
-              <layout>StationSignage:ExitLeft</layout>
-            </layoutMesh>
-          </self>
-          <variable key="images" value="CircleB,CircleA,TopLeftArrow" />
-        </children>
-        <children>
-          <self itemName="Emergency Exit">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="6.409" y="0" z="0.009000001" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0.615" y="0.615" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
-              <image>EmergencyExitLeft</image>
-            </imageMesh>
-            <defaultStyle>
-              <color>FFFFFFFF</color>
-              <emissiveColor>FFFFFFFF</emissiveColor>
-              <metallic>0</metallic>
-              <smoothness>0</smoothness>
-              <emissiveIntensity>0</emissiveIntensity>
-              <emissiveExposureWeight>0</emissiveExposureWeight>
-              <coatStrength>0</coatStrength>
-              <colorMask1>FFFFFF</colorMask1>
-              <colorMask2>FFFFFF</colorMask2>
-              <colorMask3>FFFFFF</colorMask3>
-            </defaultStyle>
-          </self>
-        </children>
-        <children>
-          <self itemName="Transfer">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="3.7390008" y="0.248000026" z="0.00299999863" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <layoutMesh>
-              <layout>StationSignage:TransferLineSign</layout>
-            </layoutMesh>
-          </self>
-          <variable key="images" value="TopLeftArrow" />
-        </children>
-        <children>
-          <self itemName="Platform">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-3.7109983" y="0.110000007" z="0.00299999863" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <layoutMesh>
-              <layout>StationSignage:PlatformNumber</layout>
-            </layoutMesh>
-          </self>
-          <variable key="images" value="Circle6" />
+          <variable key="images" value="Circle1" />
         </children>
       </children>
     </children>
     <children>
       <self itemName="Station Name End">
-        <transform alignment="Left" arrayAxisOrder="XYZ">
-          <offsetPosition x="8.131013" y="1.36400032" z="0" />
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="24.8140087" y="-0.0259996057" z="-4.17" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesFormulas;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -3664,7 +3654,7 @@
       <children>
         <self itemName="Holder Left">
           <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="33.71799" y="12.5230007" z="0.132998571" />
+            <offsetPosition x="33.58799" y="9.782999" z="0.152998567" />
             <offsetRotation x="-0" y="0" z="90" />
             <scale x="0" y="0" z="1" />
             <mustDraw>0</mustDraw>
@@ -3689,9 +3679,9 @@
         <children>
           <self itemName="Holder">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="0" y="0" z="0" />
+              <offsetPosition x="0.02" y="0" z="-1.74845549E-09" />
               <offsetRotation x="-0" y="180" z="0" />
-              <scale x="1.1" y="0.06" z="1" />
+              <scale x="3.4" y="0.06" z="1" />
               <mustDraw>0</mustDraw>
               <instanceCount>-1</instanceCount>
               <arrayInstances x="1" y="1" z="1" />
@@ -3717,7 +3707,7 @@
             <transform alignment="Left" arrayAxisOrder="XYZ">
               <offsetPosition x="0" y="0" z="0.003" />
               <offsetRotation x="-0" y="0" z="0" />
-              <scale x="1.1" y="0.06" z="1" />
+              <scale x="3.4" y="0.06" z="1" />
               <mustDraw>0</mustDraw>
               <instanceCount>-1</instanceCount>
               <arrayInstances x="1" y="1" z="1" />
@@ -3742,7 +3732,7 @@
       <children>
         <self itemName="Holder Right">
           <transform alignment="Left" arrayAxisOrder="XYZ">
-            <offsetPosition x="46.4299965" y="12.5040007" z="0.147998482" />
+            <offsetPosition x="46.4299965" y="9.774" z="0.147998482" />
             <offsetRotation x="-0" y="0" z="90" />
             <scale x="0" y="0" z="1" />
             <mustDraw>0</mustDraw>
@@ -3769,7 +3759,7 @@
             <transform alignment="Left" arrayAxisOrder="XYZ">
               <offsetPosition x="-0.00999999" y="0" z="8.74230466E-10" />
               <offsetRotation x="-0" y="180" z="0" />
-              <scale x="1.1" y="0.06" z="1" />
+              <scale x="3.4" y="0.06" z="1" />
               <mustDraw>0</mustDraw>
               <instanceCount>-1</instanceCount>
               <arrayInstances x="1" y="1" z="1" />
@@ -3795,7 +3785,7 @@
             <transform alignment="Left" arrayAxisOrder="XYZ">
               <offsetPosition x="0" y="0" z="0.003" />
               <offsetRotation x="-0" y="0" z="0" />
-              <scale x="1.1" y="0.06" z="1" />
+              <scale x="3.4" y="0.06" z="1" />
               <mustDraw>0</mustDraw>
               <instanceCount>-1</instanceCount>
               <arrayInstances x="1" y="1" z="1" />
@@ -3846,7 +3836,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -3859,55 +3849,9 @@
           </defaultStyle>
         </self>
         <children>
-          <self itemName="Exit">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="5.956002" y="0.05500001" z="0.00299999863" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0" y="0" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <layoutMesh>
-              <layout>StationSignage:ExitRight</layout>
-            </layoutMesh>
-          </self>
-          <variable key="images" value="CircleA,CircleB,TopRightArrow" />
-        </children>
-        <children>
-          <self itemName="Emergency Exit">
-            <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-6.559001" y="0" z="0.009000001" />
-              <offsetRotation x="-0" y="0" z="0" />
-              <scale x="0.615" y="0.615" z="1" />
-              <mustDraw>1</mustDraw>
-              <instanceCount>-1</instanceCount>
-              <arrayInstances x="1" y="1" z="1" />
-              <arraySpacing x="0" y="0" z="0" />
-            </transform>
-            <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
-              <image>EmergencyExitRight</image>
-            </imageMesh>
-            <defaultStyle>
-              <color>FFFFFFFF</color>
-              <emissiveColor>FFFFFFFF</emissiveColor>
-              <metallic>0</metallic>
-              <smoothness>0</smoothness>
-              <emissiveIntensity>0</emissiveIntensity>
-              <emissiveExposureWeight>0</emissiveExposureWeight>
-              <coatStrength>0</coatStrength>
-              <colorMask1>FFFFFF</colorMask1>
-              <colorMask2>FFFFFF</colorMask2>
-              <colorMask3>FFFFFF</colorMask3>
-            </defaultStyle>
-          </self>
-        </children>
-        <children>
           <self itemName="Transfer">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-5.07499933" y="0.178000018" z="0.00299999863" />
+              <offsetPosition x="-4.881999" y="0.178000018" z="0.00299999863" />
               <offsetRotation x="-0" y="0" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>1</mustDraw>
@@ -3924,7 +3868,7 @@
         <children>
           <self itemName="Platform">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="3.09900165" y="0.110000007" z="0.00299999863" />
+              <offsetPosition x="4.36300135" y="0.110000007" z="0.00299999863" />
               <offsetRotation x="-0" y="0" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>1</mustDraw>
@@ -3936,7 +3880,7 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle6" />
+          <variable key="images" value="Circle1" />
         </children>
       </children>
       <children>
@@ -3952,7 +3896,7 @@
           </transform>
           <whiteMesh />
           <defaultStyle>
-            <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetPlatformLine.Color">FF9F00FF</color>
+            <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
             <emissiveColor>FFFFFFFF</emissiveColor>
             <metallic>0</metallic>
             <smoothness>0</smoothness>
@@ -3967,7 +3911,7 @@
         <children>
           <self itemName="Exit">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-6.654999" y="0.06500001" z="0.00299999863" />
+              <offsetPosition x="-3.92799783" y="0.06500001" z="0.00299999863" />
               <offsetRotation x="-0" y="0" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>1</mustDraw>
@@ -3979,12 +3923,12 @@
               <layout>StationSignage:ExitLeft</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="CircleB,CircleA,TopLeftArrow" />
+          <variable key="images" value="CircleB,CircleA,LeftArrow" />
         </children>
         <children>
           <self itemName="Emergency Exit">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="6.37599945" y="0" z="0.009000001" />
+              <offsetPosition x="6.213" y="0" z="0.009000001" />
               <offsetRotation x="-0" y="0" z="0" />
               <scale x="0.615" y="0.615" z="1" />
               <mustDraw>1</mustDraw>
@@ -3993,7 +3937,6 @@
               <arraySpacing x="0" y="0" z="0" />
             </transform>
             <imageMesh atlas="StationSignage:main">
-              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -4013,7 +3956,7 @@
         <children>
           <self itemName="Transfer">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="3.70300078" y="0.248000026" z="0.00299999863" />
+              <offsetPosition x="3.62800074" y="0.248000026" z="0.00299999863" />
               <offsetRotation x="-0" y="0" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>1</mustDraw>
@@ -4025,12 +3968,12 @@
               <layout>StationSignage:TransferLineSign</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="TopLeftArrow" />
+          <variable key="images" value="TopLeftArrow, EscalatorsLeft" />
         </children>
         <children>
           <self itemName="Platform">
             <transform alignment="Left" arrayAxisOrder="XYZ">
-              <offsetPosition x="-3.8509984" y="0.110000007" z="0.00299999863" />
+              <offsetPosition x="-6.0719986" y="0.110000007" z="0.00299999863" />
               <offsetRotation x="-0" y="0" z="0" />
               <scale x="0" y="0" z="1" />
               <mustDraw>1</mustDraw>
@@ -4042,97 +3985,29 @@
               <layout>StationSignage:PlatformNumber</layout>
             </layoutMesh>
           </self>
-          <variable key="images" value="Circle6" />
+          <variable key="images" value="Circle1" />
         </children>
       </children>
     </children>
+    <variable key="platform" value="0" />
     <variable key="lineType" value="Train" />
-    <variable key="platform" value="6" />
   </children>
   <children>
-    <self itemName="&lt;EMPTY NODE&gt;">
-      <transform pivot="TopLeft" pivotZ="Front" alignment="Left" arrayAxisOrder="XYZ">
-        <offsetPosition x="0" y="0" z="0" />
-        <offsetRotation x="-0" y="0" z="0" />
-        <scale x="0" y="0" z="0" />
+    <self itemName="Lines Panel">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="1.09300172" y="3.17499971" z="23.723999" />
+        <offsetRotation x="-0" y="270" z="0" />
+        <scale x="0" y="0" z="1" />
         <mustDraw>0</mustDraw>
-        <instanceCount>0</instanceCount>
-        <arrayInstances x="0" y="0" z="0" />
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="">
-        <text></text>
-        <MaxWidthMeters>0</MaxWidthMeters>
-      </textMesh>
-      <defaultStyle decalFlags="0">
-        <color>00000000</color>
-        <emissiveColor>00000000</emissiveColor>
-        <metallic>0</metallic>
-        <smoothness>0</smoothness>
-        <emissiveIntensity>0</emissiveIntensity>
-        <emissiveExposureWeight>0</emissiveExposureWeight>
-        <coatStrength>0</coatStrength>
-        <colorMask1>000000</colorMask1>
-        <colorMask2>000000</colorMask2>
-        <colorMask3>000000</colorMask3>
-      </defaultStyle>
+      <layoutMesh>
+        <layout>StationSignage:LineCityStatusPanel</layout>
+      </layoutMesh>
     </self>
-    <children>
-      <self itemName="Plat4_platProp">
-        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
-          <offsetPosition x="0" y="0.8" z="-31.8" />
-          <offsetRotation x="-0" y="90" z="0" />
-          <scale x="1" y="1" z="1" />
-          <mustDraw>1</mustDraw>
-          <instanceCount>9</instanceCount>
-          <arrayInstances x="1" y="1" z="5" />
-          <arraySpacing x="0.24" y="0" z="-36" />
-        </transform>
-        <layoutMesh>
-          <layout>StationSignage:GroundPlatformMarker</layout>
-        </layoutMesh>
-      </self>
-      <variable key="platform" value="4" />
-      <variable key="lowPr" value="Subway" />
-      <variable key="highPr" value="Ferry" />
-    </children>
-    <children>
-      <self itemName="Plat5_platProp">
-        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
-          <offsetPosition x="0" y="0.8" z="-32.2" />
-          <offsetRotation x="-0" y="270" z="0" />
-          <scale x="1" y="1" z="1" />
-          <mustDraw>1</mustDraw>
-          <instanceCount>9</instanceCount>
-          <arrayInstances x="1" y="1" z="5" />
-          <arraySpacing x="0.24" y="0" z="-36" />
-        </transform>
-        <layoutMesh>
-          <layout>StationSignage:GroundPlatformMarker</layout>
-        </layoutMesh>
-      </self>
-      <variable key="platform" value="5" />
-      <variable key="lowPr" value="Subway" />
-      <variable key="highPr" value="Ferry" />
-    </children>
-    <children>
-      <self itemName="Plat6_platProp">
-        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
-          <offsetPosition x="0" y="0.8" z="-48" />
-          <offsetRotation x="-0" y="90" z="0" />
-          <scale x="1" y="1" z="1" />
-          <mustDraw>1</mustDraw>
-          <instanceCount>9</instanceCount>
-          <arrayInstances x="1" y="1" z="5" />
-          <arraySpacing x="0.24" y="0" z="-36" />
-        </transform>
-        <layoutMesh>
-          <layout>StationSignage:GroundPlatformMarker</layout>
-        </layoutMesh>
-      </self>
-      <variable key="platform" value="6" />
-      <variable key="lowPr" value="Subway" />
-      <variable key="highPr" value="Ferry" />
-    </children>
+    <variable key="lineType" value="Train" />
+    <variable key="platform" value="0" />
   </children>
 </WELayout>

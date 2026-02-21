@@ -9,6 +9,7 @@ using StationSignage.Components;
 using StationSignage.Systems;
 using StationSignage.WEBridge;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
@@ -68,16 +69,25 @@ public class DisplayFormulas
             _ => Square
         };
     }
-
+    
     public static string GetImage(Entity buildingRef, Dictionary<string, string> vars)
     {
         vars.TryGetValue("$idx", out var idxStr);
-        return vars.TryGetValue("img_" + idxStr, out var images) ? images : "";
+        int.TryParse(idxStr, out var idx);
+        return GetImageList(buildingRef, vars).ElementAtOrDefault(idx);
     }
-    public static int GetImageCount(Entity buildingRef, Dictionary<string, string> vars)
+    
+    public static HashSet<string> GetImageList(Entity buildingRef, Dictionary<string, string> vars)
     {
-        vars.TryGetValue("img_ct", out var idxStr);
-        return int.TryParse(idxStr, out var ct) ? ct : 0;
+        vars.TryGetValue("images", out var images);
+        if (string.IsNullOrWhiteSpace(images))
+            return [];
+
+        return images
+            .Split(',')
+            .Select(s => s.Trim())
+            .Where(s => !string.IsNullOrEmpty(s))
+            .ToHashSet();
     }
 
     public static string GetPlatformImage(Entity buildingRef, Dictionary<string, string> vars)

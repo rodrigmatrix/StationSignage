@@ -1,4 +1,5 @@
-﻿using Colossal.Entities;
+﻿using System.Collections.Generic;
+using Colossal.Entities;
 using Game.Common;
 using Game.UI;
 using Game.Vehicles;
@@ -73,5 +74,15 @@ public static class LineUtils
         }
 
         return letter + index;
+    }
+    
+    public static int PlatformHasLine(Entity buildingRef, Dictionary<string, string> vars)
+    {
+        return 1;
+    }
+    
+    public static int CenterPlatformHasLine(Entity buildingRef, Dictionary<string, string> vars)
+    {
+        return 1;
     }
 }
