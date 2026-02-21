@@ -1,0 +1,318 @@
+<WELayout>
+  <self itemName="StationTV">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="0" y="10" z="0" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="1.73" y="1.2" z="0.03" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <whiteCubeMesh childrenRefersToFrontFace="true" />
+    <defaultStyle>
+      <color>000000FF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0.231523961</metallic>
+      <smoothness>0.11576198</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+  <children>
+    <self itemName="Background">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0" z="-0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1.7" y="1.1" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle decalFlags="32">
+        <color>262626FF</color>
+        <emissiveColor>929292FF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0.7099675</emissiveIntensity>
+        <emissiveExposureWeight>1</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Header">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0.00199999986" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="1E-05" y="1E-05" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <whiteMesh />
+        <defaultStyle decalFlags="32">
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+      <children>
+        <self itemName="Background Color">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="0" y="0.48" z="0" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="1.7" y="0.15" z="0.01" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <whiteMesh />
+          <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="-60">
+            <color formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetTvBarColors">FF0008FF</color>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <normalOpacity>0</normalOpacity>
+            <metallicOpacity>0</metallicOpacity>
+          </decalStyle>
+        </self>
+      </children>
+      <children>
+        <self itemName="Logo">
+          <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="0.819999754" y="0.475" z="0" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="0.4" y="0.1" z="0.01" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <whiteMesh />
+          <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="-25">
+            <color>000000FF</color>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <normalOpacity>0</normalOpacity>
+            <metallicOpacity>0</metallicOpacity>
+          </decalStyle>
+        </self>
+        <children>
+          <self itemName="Image Train">
+            <transform alignment="Left" isAbsoluteScale="true" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+              <offsetPosition x="-0" y="0" z="0" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0.4" y="0.1" z="0.12" />
+              <mustDraw formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/StationSignage.Components.SS_PlatformData;type.=1">1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <imageMesh atlas="StationSignage:TrainCompanyDecals">
+              <mesh></mesh>
+              <image formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOperatorOrDefault/&amp;StationSignage.Formulas.DisplayFormulas;GetOperatorImageWide">CircleB</image>
+            </imageMesh>
+            <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+              <color>FFFFFFFF</color>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <normalOpacity>0</normalOpacity>
+              <metallicOpacity>0</metallicOpacity>
+            </decalStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Image Metro">
+            <transform alignment="Left" isAbsoluteScale="true" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+              <offsetPosition x="-0" y="0" z="0" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0.4" y="0.1" z="0.12" />
+              <mustDraw formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/StationSignage.Components.SS_PlatformData;type.=8">1</mustDraw>
+              <instanceCount>-1</instanceCount>
+              <arrayInstances x="1" y="1" z="1" />
+              <arraySpacing x="0" y="0" z="0" />
+            </transform>
+            <imageMesh atlas="StationSignage:MetroCompanyDecals">
+              <mesh></mesh>
+              <image formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOperatorOrDefault/&amp;StationSignage.Formulas.DisplayFormulas;GetOperatorImageWide">CircleB</image>
+            </imageMesh>
+            <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+              <color>FFFFFFFF</color>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <normalOpacity>0</normalOpacity>
+              <metallicOpacity>0</metallicOpacity>
+            </decalStyle>
+          </self>
+        </children>
+      </children>
+      <children>
+        <self itemName="Time">
+          <transform pivot="MiddleRight" alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="-0.7999997" y="0.4775" z="0" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="0.07" y="0.07" z="0.01" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <textMesh fontName="HelveticaWorld_Regular">
+            <text formulae="&amp;StationSignage.Formulas.NamesFormulas;GetTimeString">Hora: 17:40</text>
+            <MaxWidthMeters>0</MaxWidthMeters>
+          </textMesh>
+          <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="1">
+            <color formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetTvBarColors/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <normalOpacity>0</normalOpacity>
+            <metallicOpacity>0</metallicOpacity>
+          </decalStyle>
+        </self>
+      </children>
+    </children>
+    <children>
+      <self itemName="Footer">
+        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="-0.952" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="1E-05" y="1E-05" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <whiteMesh />
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+      <children>
+        <self itemName="Background Color">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="0" y="0.48" z="0" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="1.7" y="0.15" z="0.01" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <whiteMesh />
+          <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="-4">
+            <color formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetTvBarColors">FF0008FF</color>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <normalOpacity>0</normalOpacity>
+            <metallicOpacity>0</metallicOpacity>
+          </decalStyle>
+        </self>
+      </children>
+      <children>
+        <self itemName="Welcome">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="0" y="0.47" z="0" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="0.06" y="0.06" z="0.01" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <textMesh fontName="HelveticaWorld_Regular" rescaleHeightOnTextOverflow="true">
+            <text formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetTvChannelFooter">&amp;StationSignage.Formulas.DisplayFormulas;GetWelcomeMessage</text>
+            <MaxWidthMeters>1.65</MaxWidthMeters>
+          </textMesh>
+          <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="1">
+            <color formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetTvBarColors/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <normalOpacity>0</normalOpacity>
+            <metallicOpacity>0</metallicOpacity>
+          </decalStyle>
+        </self>
+      </children>
+    </children>
+    <children>
+      <self itemName="Body_Status">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="1E-05" y="1E-06" z="1" />
+          <mustDraw formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetTvChannel.=0">1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:_TV_LineStatus</layout>
+        </layoutMesh>
+      </self>
+    </children>
+    <children>
+      <self itemName="Body_NextTrain">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="1E-05" y="1E-06" z="1" />
+          <mustDraw formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetTvChannel.=1">1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:_TV_NextTrain</layout>
+        </layoutMesh>
+      </self>
+    </children>
+    <children>
+      <self itemName="Glass">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="0.003" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="1.7" y="0.0011" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <whiteMesh />
+        <glassStyle>
+          <color>FFFFFF00</color>
+          <glassColor>0008FF</glassColor>
+          <glassRefraction>1.5</glassRefraction>
+          <metallic>0</metallic>
+          <smoothness>0.9432782</smoothness>
+          <normalStrength>0</normalStrength>
+          <glassThickness>0.0051</glassThickness>
+        </glassStyle>
+      </self>
+    </children>
+  </children>
+</WELayout>

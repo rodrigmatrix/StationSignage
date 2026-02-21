@@ -1,7 +1,7 @@
 <WELayout>
   <self itemName="Next Train TV">
     <transform alignment="Left" arrayAxisOrder="XYZ">
-      <offsetPosition x="7.52199936" y="-0.662" z="1.437" />
+      <offsetPosition x="7.52199936" y="5.90799952" z="1.437" />
       <offsetRotation x="-0" y="0" z="0" />
       <scale x="0" y="0" z="1" />
       <mustDraw>1</mustDraw>
@@ -11,7 +11,7 @@
     </transform>
     <whiteMesh />
     <defaultStyle>
-      <color>FFFFFFFF</color>
+      <color>000000FF</color>
       <emissiveColor>FFFFFFFF</emissiveColor>
       <metallic>0</metallic>
       <smoothness>0</smoothness>
@@ -27,7 +27,7 @@
     <self itemName="Next Train Panel">
       <transform alignment="Left" arrayAxisOrder="XYZ">
         <offsetPosition x="-39.3600044" y="13.310998" z="-1.29000211" />
-        <offsetRotation x="-0" y="180" z="0" />
+        <offsetRotation x="-0" y="90" z="0" />
         <scale x="0" y="0" z="1" />
         <mustDraw>1</mustDraw>
         <instanceCount>-1</instanceCount>
@@ -35,7 +35,7 @@
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>StationSignage:NextTrainPanel</layout>
+        <layout>StationSignage:StationTV</layout>
       </layoutMesh>
     </self>
   </children>
@@ -43,7 +43,7 @@
     <self itemName="Next Train Panel">
       <transform alignment="Left" arrayAxisOrder="XYZ">
         <offsetPosition x="-39.6499977" y="13.311" z="-1.288002" />
-        <offsetRotation x="-0" y="0" z="0" />
+        <offsetRotation x="0" y="270" z="0" />
         <scale x="0" y="0" z="1" />
         <mustDraw>1</mustDraw>
         <instanceCount>-1</instanceCount>
@@ -51,7 +51,7 @@
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>StationSignage:NextTrainPanel</layout>
+        <layout>StationSignage:StationTV</layout>
       </layoutMesh>
     </self>
   </children>
@@ -159,4 +159,5 @@
       </defaultStyle>
     </self>
   </children>
+  <variable key="tvCh" value="1" />
 </WELayout>

@@ -1,0 +1,72 @@
+<WELayout>
+  <self itemName="BG">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="0" y="0" z="-0.00" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="0.14" y="0.14" z="0.02" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <imageMesh atlas="StationSignage:LineBg">
+      <mesh></mesh>
+      <image formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetLineBackgroundShape">NEW TEXT</image>
+    </imageMesh>
+    <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+      <color formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetDestinationByIdx.line/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <normalOpacity>0</normalOpacity>
+      <metallicOpacity>0</metallicOpacity>
+    </decalStyle>
+  </self>
+  <children>
+    <self itemName="FG">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0" z="-0.00" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.125" y="0.125" z="0.02" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <imageMesh atlas="StationSignage:LineBg">
+        <mesh></mesh>
+        <image formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetLineBackgroundShape">NEW TEXT</image>
+      </imageMesh>
+      <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="2">
+        <color formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetDestinationByIdx.line/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor">FFFFFFFF</color>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <normalOpacity>0</normalOpacity>
+        <metallicOpacity>0</metallicOpacity>
+      </decalStyle>
+    </self>
+    <children>
+      <self itemName="Text">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="-0.0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.1" y="0.1" z="0.02" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <textMesh fontName="HelveticaWorld_Regular" rescaleHeightOnTextOverflow="true">
+          <text formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetDestinationByIdx.line/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineAcronym">NEW TEXT</text>
+          <MaxWidthMeters>0.1</MaxWidthMeters>
+        </textMesh>
+        <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="3">
+          <color formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetDestinationByIdx.line/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <normalOpacity>0</normalOpacity>
+          <metallicOpacity>0</metallicOpacity>
+        </decalStyle>
+      </self>
+    </children>
+  </children>
+</WELayout>

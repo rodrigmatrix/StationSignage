@@ -1,0 +1,40 @@
+<WELayout>
+  <children>
+    <self itemName="Plat1_platProp">
+      <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-7.999955" y="0.8" z="540" />
+        <offsetRotation x="-0" y="180.0001" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>9</instanceCount>
+        <arrayInstances x="1" y="1" z="5" />
+        <arraySpacing x="0.24" y="0" z="-24" />
+      </transform>
+      <layoutMesh>
+        <layout>StationSignage:GroundPlatformMarker</layout>
+      </layoutMesh>
+    </self>
+    <variable key="platform" value="1" />
+    <variable key="lowPr" value="Subway" />
+    <variable key="highPr" value="Ferry" />
+  </children>
+  <children>
+    <self itemName="Plat2_platProp">
+      <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="8" y="0.8" z="540" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>9</instanceCount>
+        <arrayInstances x="1" y="1" z="5" />
+        <arraySpacing x="0.24" y="0" z="-24" />
+      </transform>
+      <layoutMesh>
+        <layout>StationSignage:GroundPlatformMarker</layout>
+      </layoutMesh>
+    </self>
+    <variable key="platform" value="2" />
+    <variable key="lowPr" value="Subway" />
+    <variable key="highPr" value="Ferry" />
+  </children>
+</WELayout>

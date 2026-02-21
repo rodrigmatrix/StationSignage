@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Colossal.Entities;
 using Game.Common;
-using Game.Routes;
 using Game.UI;
 using Game.Vehicles;
-using StationSignage.BridgeWE;
+using System.Collections.Specialized;
 using Unity.Entities;
 
 namespace StationSignage.Utils;
 
 public static class LineUtils
 {
-    
-    private static LinesSystem _linesSystem;
+
     private static NameSystem _nameSystem;
     private static EntityManager _entityManager;
-        
+
     public const string Transparent = "Transparent";
 
     public const string Empty = "";
-    
+
     private static readonly StringDictionary ModelsDictionary = new()
     {
         { "SubwayCar01", "A" },
@@ -31,27 +27,6 @@ public static class LineUtils
         { "NA_TrainPassengerCar01", "C" },
         { "NA_TrainPassengerEngine01", "C" },
     };
-    
-    public static Tuple<string, string> GetRouteName(Entity entity)
-    {
-        var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        var nameSystem = World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
-        var fullLineName = nameSystem.GetName(entity).Translate();
-        entityManager.TryGetComponent<RouteNumber>(entity, out var routeNumber);
-        var routeName = Mod.m_Setting.LineDisplayNameDropdown switch
-        {
-            Settings.LineDisplayNameOptions.Custom => GetSmallLineName(fullLineName, routeNumber),
-            Settings.LineDisplayNameOptions.WriteEverywhere => WERouteFn.GetTransportLineNumber(entity),
-            Settings.LineDisplayNameOptions.Generated => routeNumber.m_Number.ToString(),
-            _ => GetSmallLineName(fullLineName, routeNumber)
-        };
-        return Tuple.Create(fullLineName, routeName);
-    }
-    
-    private static string GetSmallLineName(string fullLineName, RouteNumber routeNumber)
-    {
-        return fullLineName is { Length: >= 1 and <= 3 } ? fullLineName : routeNumber.m_Number.ToString();
-    }
 
     public static string GetTrainName(Entity entity)
     {
@@ -63,7 +38,7 @@ public static class LineUtils
         _entityManager.TryGetBuffer<OwnedVehicle>(owner.m_Owner, true, out var ownerVehicles);
 
         var index = 0;
-    
+
         for (var i = 0; i < ownerVehicles.Length; ++i)
         {
             if (ownerVehicles[i].m_Vehicle == controller.m_Controller)
@@ -99,5 +74,15 @@ public static class LineUtils
         }
 
         return letter + index;
+    }
+    
+    public static int PlatformHasLine(Entity buildingRef, Dictionary<string, string> vars)
+    {
+        return 1;
+    }
+    
+    public static int CenterPlatformHasLine(Entity buildingRef, Dictionary<string, string> vars)
+    {
+        return 1;
     }
 }

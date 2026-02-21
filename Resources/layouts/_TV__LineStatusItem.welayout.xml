@@ -1,0 +1,117 @@
+<WELayout>
+  <self itemName="Line Status">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="0" y="0" z="0" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="1.7" y="0.13" z="0.01" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <whiteMesh />
+    <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="1">
+      <color>FF000000</color>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <normalOpacity>0</normalOpacity>
+      <metallicOpacity>0</metallicOpacity>
+    </decalStyle>
+  </self>
+  <children>
+    <self itemName="Color">
+      <transform pivot="MiddleLeft" alignment="Left" isAbsoluteScale="true" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.8" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.1" y="0.1" z="0.02" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <imageMesh atlas="StationSignage:LineBg">
+        <mesh></mesh>
+        <image formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetLineBackgroundShape">CircleD</image>
+      </imageMesh>
+      <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="2">
+        <color>FFFFFFFF</color>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <normalOpacity>0</normalOpacity>
+        <metallicOpacity>0</metallicOpacity>
+      </decalStyle>
+    </self>
+    <children>
+      <self itemName="Number">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="-0.01" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.06" y="0.06" z="0.02" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <textMesh fontName="HelveticaWorld_Regular" rescaleHeightOnTextOverflow="true">
+          <text formulae="&amp;StationSignage.Formulas.LinesFormulas;GetCityLineAtIdx/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineAcronym">E</text>
+          <MaxWidthMeters>0.06</MaxWidthMeters>
+        </textMesh>
+        <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="3">
+          <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetCityLineAtIdx/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <normalOpacity>0</normalOpacity>
+          <metallicOpacity>0</metallicOpacity>
+        </decalStyle>
+      </self>
+    </children>
+  </children>
+  <children>
+    <self itemName="Status">
+      <transform pivot="MiddleRight" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-0.675" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.06" y="0.06" z="0.02" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular" rescaleHeightOnTextOverflow="true">
+        <text formulae="&amp;StationSignage.Formulas.LinesFormulas;GetCityLineAtIdx/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineStatus.lineOperationStatus/&amp;StationSignage.Formulas.DisplayFormulas;GetLineStatusText">&amp;StationSignage.Formulas.LinesFormulas;GetLineStatus.Status</text>
+        <MaxWidthMeters>1.25</MaxWidthMeters>
+      </textMesh>
+      <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="3">
+        <color>FFFFFFFF</color>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <normalOpacity>0</normalOpacity>
+        <metallicOpacity>0</metallicOpacity>
+      </decalStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Status Color">
+      <transform pivot="MiddleRight" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-0.8" y="-0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.08" y="0.08" z="0.02" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <imageMesh atlas="StationSignage:StationIcons">
+        <mesh></mesh>
+        <image>Circle</image>
+      </imageMesh>
+      <decalStyle decalFlags="40" affectSmoothness="false" drawOrder="2">
+        <color formulae="&amp;StationSignage.Formulas.LinesFormulas;GetCityLineAtIdx/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineStatus.lineOperationStatus/&amp;StationSignage.Formulas.DisplayFormulas;GetLineStatusColor">00FF1AFF</color>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <normalOpacity>0</normalOpacity>
+        <metallicOpacity>0</metallicOpacity>
+      </decalStyle>
+    </self>
+  </children>
+</WELayout>

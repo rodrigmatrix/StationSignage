@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
 	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
+
+
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
 		<TargetFramework>net472</TargetFramework>
@@ -10,9 +12,10 @@
 		<!--The file where mod information which is required for publishing mod on PDX mods are stored-->
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
 		<AdditionalFilesDirectory>Resources</AdditionalFilesDirectory>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
-	
-	
+  <!--<Target Name="RunModPostProcessor" AfterTargets="AfterBuild" Condition="False" />-->
+
 	<ItemGroup>
 		<Reference Include="Game">
 			<Private>false</Private>
@@ -32,9 +35,12 @@
 		<Reference Include="Colossal.Localization.LocalizationManager">
 			<Private>false</Private>
 		</Reference>
-		<Reference Include="Colossal.IO.AssetDatabase">
-			<Private>false</Private>
-		</Reference>
+    <Reference Include="Colossal.IO.AssetDatabase">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Colossal.Mathematics">
+      <Private>false</Private>
+    </Reference>
 		<Reference Include="UnityEngine.CoreModule">
 			<Private>false</Private>
 		</Reference>
@@ -52,20 +58,24 @@
 		</Reference>
 	</ItemGroup>
 
-	<ItemGroup>
-		<Reference Include="Colossal.AssetPipeline">
-			<Private>false</Private>
-		</Reference>
-		<Reference Update="System">
-			<Private>false</Private>
-		</Reference>
-		<Reference Update="System.Core">
-			<Private>false</Private>
-		</Reference>
-		<Reference Update="System.Data">
-			<Private>false</Private>
-		</Reference>
-	</ItemGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>$(CSII_MANAGEDPATH)\System.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Update="System.Core">
+      <HintPath>$(CSII_MANAGEDPATH)\System.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Update="System.Data">
+      <HintPath>$(CSII_MANAGEDPATH)\System.Data.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>$(CSII_MANAGEDPATH)\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Lib.Harmony" Version="2.2.2" />

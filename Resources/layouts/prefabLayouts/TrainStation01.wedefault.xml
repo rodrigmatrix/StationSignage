@@ -30,7 +30,7 @@
           <offsetPosition x="20.354" y="0.431" z="1.48299992" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -51,11 +51,11 @@
       </self>
       <children>
         <self itemName="Train First Half">
-          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
             <offsetPosition x="1.550999" y="-0.662" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -171,11 +171,11 @@
       </children>
       <children>
         <self itemName="Train Last Half">
-          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
             <offsetPosition x="74.996994" y="-0.651" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -292,11 +292,11 @@
       </children>
       <children>
         <self itemName="Train First Half">
-          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
             <offsetPosition x="32.7609978" y="-0.662" z="2.127" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -412,11 +412,11 @@
       </children>
       <children>
         <self itemName="Train Last Half">
-          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
             <offsetPosition x="95.884964" y="-2.06200027" z="1.33600008" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -560,11 +560,11 @@
       </self>
       <children>
         <self itemName="Train First Half">
-          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
             <offsetPosition x="3.43699956" y="-0.662" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -680,11 +680,11 @@
       </children>
       <children>
         <self itemName="Train Last Half">
-          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
             <offsetPosition x="76.9009857" y="-0.662" z="1.41200006" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -801,11 +801,11 @@
       </children>
       <children>
         <self itemName="Train Last Half">
-          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
             <offsetPosition x="45.64098" y="-0.692000031" z="1.98200011" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -922,11 +922,11 @@
       </children>
       <children>
         <self itemName="Train First Half">
-          <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
             <offsetPosition x="-17.4150066" y="-2.00199986" z="1.437" />
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="0" y="0" z="1" />
-            <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+            <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
             <instanceCount>-1</instanceCount>
             <arrayInstances x="1" y="1" z="1" />
             <arraySpacing x="0" y="0" z="0" />
@@ -1045,7 +1045,7 @@
     </children>
     <children>
       <self itemName="Station Name Middle">
-        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
           <offsetPosition x="-13.2229958" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
@@ -1293,7 +1293,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -1399,7 +1400,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -1455,7 +1457,7 @@
     </children>
     <children>
       <self itemName="Station Name Start">
-        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
           <offsetPosition x="-39.81699" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
@@ -1703,7 +1705,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -1809,7 +1812,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -1865,7 +1869,7 @@
     </children>
     <children>
       <self itemName="Station Name End">
-        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
           <offsetPosition x="8.131013" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
@@ -2113,7 +2117,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -2219,7 +2224,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -2274,8 +2280,8 @@
       </children>
     </children>
     <variable key="lineType" value="Train" />
-    <variable key="platformLeft" value="2" />
-    <variable key="platformRight" value="1" />
+    <variable key="platformLeft" value="3" />
+    <variable key="platformRight" value="2" />
   </children>
   <children>
     <self itemName="Platform 1">
@@ -2304,11 +2310,11 @@
     </self>
     <children>
       <self itemName="Platform 1 Panel">
-        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
           <offsetPosition x="19.810997" y="0.431" z="-1.50100148" />
           <offsetRotation x="-0" y="180" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -2812,11 +2818,11 @@
     </children>
     <children>
       <self itemName="Station Name Start">
-        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
           <offsetPosition x="-49.27599" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -3060,7 +3066,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -3165,7 +3172,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -3220,11 +3228,11 @@
     </children>
     <children>
       <self itemName="Station Name Middle">
-        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
           <offsetPosition x="-10.1559906" y="1.36400032" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -3468,7 +3476,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitRight</image>
             </imageMesh>
             <defaultStyle>
@@ -3573,7 +3582,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -3628,11 +3638,11 @@
     </children>
     <children>
       <self itemName="Station Name End">
-        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
           <offsetPosition x="24.8140087" y="-0.0259996057" z="-4.17" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LinesUtils;PlatformHasLine">0</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -3936,7 +3946,8 @@
               <arrayInstances x="1" y="1" z="1" />
               <arraySpacing x="0" y="0" z="0" />
             </transform>
-            <imageMesh atlas="StationSignage:main">
+            <imageMesh atlas="StationSignage:StationIcons">
+              <mesh></mesh>
               <image>EmergencyExitLeft</image>
             </imageMesh>
             <defaultStyle>
@@ -3989,14 +4000,13 @@
         </children>
       </children>
     </children>
-    <variable key="platform" value="0" />
-    <variable key="lineType" value="Train" />
+    <variable key="platform" value="1" />
   </children>
   <children>
     <self itemName="Lines Panel">
       <transform alignment="Left" arrayAxisOrder="XYZ">
-        <offsetPosition x="1.09300172" y="3.17499971" z="23.723999" />
-        <offsetRotation x="-0" y="270" z="0" />
+        <offsetPosition x="1.09300172" y="3.145" z="23.723999" />
+        <offsetRotation x="-0" y="0" z="0" />
         <scale x="0" y="0" z="1" />
         <mustDraw>0</mustDraw>
         <instanceCount>-1</instanceCount>
@@ -4004,10 +4014,96 @@
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>StationSignage:LineCityStatusPanel</layout>
+        <layout>StationSignage:StationTV</layout>
       </layoutMesh>
     </self>
     <variable key="lineType" value="Train" />
-    <variable key="platform" value="0" />
+    <variable key="platform" value="1" />
+  </children>
+  <children>
+    <self itemName="&lt;EMPTY NODE&gt;">
+      <transform pivot="TopLeft" pivotZ="Front" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0" y="0" z="0" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>0</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="">
+        <text></text>
+        <MaxWidthMeters>0</MaxWidthMeters>
+      </textMesh>
+      <defaultStyle decalFlags="0">
+        <color>00000000</color>
+        <emissiveColor>00000000</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>000000</colorMask1>
+        <colorMask2>000000</colorMask2>
+        <colorMask3>000000</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Plat1_platProp">
+        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0.8" z="0" />
+          <offsetRotation x="-0" y="270" z="0" />
+          <scale x="1" y="1" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>9</instanceCount>
+          <arrayInstances x="1" y="1" z="5" />
+          <arraySpacing x="0.24" y="0" z="-36" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:GroundPlatformMarker</layout>
+        </layoutMesh>
+      </self>
+      <variable key="platform" value="1" />
+      <variable key="lowPr" value="Subway" />
+      <variable key="highPr" value="Ferry" />
+    </children>
+    <children>
+      <self itemName="Plat2_platProp">
+        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0.8" z="-15.8" />
+          <offsetRotation x="-0" y="90" z="0" />
+          <scale x="1" y="1" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>9</instanceCount>
+          <arrayInstances x="1" y="1" z="5" />
+          <arraySpacing x="0.24" y="0" z="-36" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:GroundPlatformMarker</layout>
+        </layoutMesh>
+      </self>
+      <variable key="platform" value="2" />
+      <variable key="lowPr" value="Subway" />
+      <variable key="highPr" value="Ferry" />
+    </children>
+    <children>
+      <self itemName="Plat3_platProp">
+        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0.8" z="-16.2" />
+          <offsetRotation x="-0" y="270" z="0" />
+          <scale x="1" y="1" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>9</instanceCount>
+          <arrayInstances x="1" y="1" z="5" />
+          <arraySpacing x="0.24" y="0" z="-36" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:GroundPlatformMarker</layout>
+        </layoutMesh>
+      </self>
+      <variable key="platform" value="3" />
+      <variable key="lowPr" value="Subway" />
+      <variable key="highPr" value="Ferry" />
+    </children>
   </children>
 </WELayout>

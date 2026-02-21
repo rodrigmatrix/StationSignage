@@ -9,11 +9,12 @@
       <arrayInstances x="1" y="1" z="1" />
       <arraySpacing x="0" y="0" z="0" />
     </transform>
-    <imageMesh atlas="StationSignage:main">
-      <image formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetImage">EscalatorsRight</image>
+    <imageMesh atlas="StationSignage:StationIcons">
+      <mesh></mesh>
+      <image formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetImage"></image>
     </imageMesh>
     <defaultStyle>
-      <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.OnPrimaryColor">FFFFFFFF</color>
+      <color formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOrDefault/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
       <emissiveColor>FFFFFFFF</emissiveColor>
       <metallic>0</metallic>
       <smoothness>0</smoothness>

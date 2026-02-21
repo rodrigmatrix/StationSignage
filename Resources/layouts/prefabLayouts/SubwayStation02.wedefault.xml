@@ -139,7 +139,7 @@
             <arraySpacing x="0" y="0" z="0" />
           </transform>
           <layoutMesh>
-            <layout>StationSignage:LineStatusTV</layout>
+            <layout>StationSignage:_Main_Hanging2TV</layout>
           </layoutMesh>
         </self>
       </children>
@@ -150,7 +150,7 @@
           <offsetPosition x="0" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">1</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LineUtils;PlatformHasLine">1</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -490,6 +490,7 @@
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
               <imageMesh atlas="StationSignage:main">
+                <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
               <defaultStyle>
@@ -647,6 +648,7 @@
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
               <imageMesh atlas="StationSignage:main">
+                <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
               <defaultStyle>
@@ -992,6 +994,7 @@
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
               <imageMesh atlas="StationSignage:main">
+                <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
               <defaultStyle>
@@ -1149,6 +1152,7 @@
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
               <imageMesh atlas="StationSignage:main">
+                <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
               <defaultStyle>
@@ -1416,7 +1420,7 @@
         </children>
       </children>
     </children>
-    <variable key="platform" value="0" />
+    <variable key="platform" value="1" />
     <variable key="lineType" value="Subway" />
   </children>
   <children>
@@ -1559,7 +1563,7 @@
             <arraySpacing x="0" y="0" z="0" />
           </transform>
           <layoutMesh>
-            <layout>StationSignage:LineStatusTV</layout>
+            <layout>StationSignage:_Main_Hanging2TV</layout>
           </layoutMesh>
         </self>
       </children>
@@ -1570,7 +1574,7 @@
           <offsetPosition x="0" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0" y="0" z="1" />
-          <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">1</mustDraw>
+          <mustDraw formulae="&amp;StationSignage.Utils.LineUtils;PlatformHasLine">1</mustDraw>
           <instanceCount>-1</instanceCount>
           <arrayInstances x="1" y="1" z="1" />
           <arraySpacing x="0" y="0" z="0" />
@@ -2306,6 +2310,7 @@
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
               <imageMesh atlas="StationSignage:main">
+                <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
               <defaultStyle>
@@ -2463,6 +2468,7 @@
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
               <imageMesh atlas="StationSignage:main">
+                <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
               <defaultStyle>
@@ -2610,6 +2616,7 @@
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
               <imageMesh atlas="StationSignage:main">
+                <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
               <defaultStyle>
@@ -2767,6 +2774,7 @@
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
               <imageMesh atlas="StationSignage:main">
+                <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
               <defaultStyle>
@@ -2836,7 +2844,66 @@
         </children>
       </children>
     </children>
-    <variable key="platform" value="1" />
+    <variable key="platform" value="2" />
     <variable key="lineType" value="Subway" />
+  </children>
+  <children>
+    <self itemName="Scaler">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <matrixTransform>
+        <scale>
+          <defaultValue x="1.6" y="1.2" z="1.1" />
+        </scale>
+        <offsetPosition>
+          <defaultValue x="10" y="10" z="0" />
+        </offsetPosition>
+      </matrixTransform>
+    </self>
+    <children>
+      <self itemName="Plat1_platProp">
+        <transform pivot="MiddleRight" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="-6.232999" y="-4.374" z="0.292000532" />
+          <offsetRotation x="-0" y="270" z="0" />
+          <scale x="0" y="0" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>2</instanceCount>
+          <arrayInstances x="1" y="1" z="2" />
+          <arraySpacing x="0" y="0" z="27" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:DestinationPlatformBoard</layout>
+        </layoutMesh>
+      </self>
+      <variable key="platform" value="1" />
+      <variable key="lowPr" value="Subway" />
+      <variable key="highPr" value="Ferry" />
+    </children>
+    <children>
+      <self itemName="Plat2_platProp">
+        <transform pivot="MiddleRight" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="-6.232999" y="-4.374" z="-10.7960005" />
+          <offsetRotation x="-0" y="270" z="0" />
+          <scale x="0" y="0" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>2</instanceCount>
+          <arrayInstances x="1" y="1" z="2" />
+          <arraySpacing x="0" y="0" z="27" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:DestinationPlatformBoard</layout>
+        </layoutMesh>
+      </self>
+      <variable key="platform" value="2" />
+      <variable key="lowPr" value="Subway" />
+      <variable key="highPr" value="Ferry" />
+    </children>
   </children>
 </WELayout>

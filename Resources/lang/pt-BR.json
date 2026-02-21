@@ -25,5 +25,22 @@
   "StationSignage.Boarding": "Embarque",
   "StationSignage.NoSmoking": "Proibido Fumar",
   "StationSignage.WelcomeSubway": "Bem-vindo ao metrô de %s",
-  "StationSignage.WelcomeTrain": "Bem-vindo ao trem de %s"
+  "StationSignage.WelcomeTrain": "Bem-vindo ao trem de %s",
+  "StationSignage.ClosedPlatform": "Plataforma fechada",
+  "StationSignage.WelcomeCity": "Bem-vindo à %s",
+  "StationSignage.weOptions[LineIndicatorShape]": "Forma do indicador de linha",
+  "StationSignage.weOptions[LineIndicatorShapeOptions.Circle]": "Círculo",
+  "StationSignage.weOptions[LineIndicatorShapeOptions.Square]": "Quadrado",
+  "StationSignage.weOptions[LineOperatorCity]": "Operadora da linha da cidade",
+  "StationSignage.weOptions[LineOperatorCityOptions.Generic]": "Genérico",
+  "StationSignage.weOptions[LineOperatorCityOptions.SaoPaulo]": "São Paulo",
+  "StationSignage.weOptions[LineOperatorCityOptions.NewYork]": "Nova York",
+  "StationSignage.weOptions[LineOperatorCityOptions.London]": "Londres",
+  "StationSignage.weOptions[LineDisplayName]": "Fonte do código da linha",
+  "StationSignage.weOptions[LineDisplayNameOptions.Custom]": "Personalizado (A partir do nome dado à linha)",
+  "StationSignage.weOptions[LineDisplayNameOptions.WriteEverywhere]": "Do Write Everywhere",
+  "StationSignage.weOptions[LineDisplayNameOptions.Generated]": "Gerado pelo jogo",
+  "StationSignage.weOptions[LineIndicatorShape.tooltip]": "Escolha qual forma você deseja que suas linhas sejam exibidas.",
+  "StationSignage.weOptions[LineOperatorCity.tooltip]": "Escolha quais devem ser os operadores da linha. Se você escolher genérico, poderá substituir o operador por um atlas personalizado na aba Atlas. Se você escolher uma cidade específica, ela sempre terá o mesmo atlas e lógica para essa cidade.",
+  "StationSignage.weOptions[LineDisplayName.tooltip]": "Permite que você altere o que deve ser exibido como o nome da linha."
 }

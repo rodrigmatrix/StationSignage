@@ -1,0 +1,277 @@
+<WELayout>
+  <self itemName="Body_NextTrain">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="0" y="0" z="0" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="1E-06" y="0" z="1" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <whiteMesh />
+    <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+      <color>FFFFFFFF</color>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <normalOpacity>0</normalOpacity>
+      <metallicOpacity>0</metallicOpacity>
+    </decalStyle>
+  </self>
+  <children>
+    <self itemName="Divider">
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.85" y="0.298" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1.7" y="0.01" z="0.01" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+        <color>FFFFFFFF</color>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <normalOpacity>0</normalOpacity>
+        <metallicOpacity>0</metallicOpacity>
+      </decalStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Subtitle">
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.8" y="0.22" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.055" y="0.055" z="0.01" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular">
+        <text formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetVehicleIncomingInformation.subtitle.ToString/&amp;StationSignage.Formulas.DisplayFormulas;GetNameFromMod">NEW TEXT</text>
+        <MaxWidthMeters>0</MaxWidthMeters>
+      </textMesh>
+      <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+        <color>FFFFFFFF</color>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <normalOpacity>0</normalOpacity>
+        <metallicOpacity>0</metallicOpacity>
+      </decalStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Message">
+      <transform pivot="MiddleRight" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-0.8" y="0.22" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.055" y="0.055" z="0.01" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular">
+        <text formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetVehicleIncomingMessage">NEW TEXT</text>
+        <MaxWidthMeters>0</MaxWidthMeters>
+      </textMesh>
+      <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+        <color>FFF000FF</color>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <normalOpacity>0</normalOpacity>
+        <metallicOpacity>0</metallicOpacity>
+      </decalStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Title">
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.8" y="0.34800002" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.05" y="0.05" z="0.1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular">
+        <text formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetVehicleIncomingInformation.title.ToString/&amp;StationSignage.Formulas.DisplayFormulas;GetNameFromMod">&amp;StationSignage.Formulas.SubwayFormulas;GetFirstPlatformVehiclePanel.Title</text>
+        <MaxWidthMeters>0.72</MaxWidthMeters>
+      </textMesh>
+      <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+        <color>FFFFFFFF</color>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <normalOpacity>0</normalOpacity>
+        <metallicOpacity>0</metallicOpacity>
+      </decalStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Train incoming">
+      <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/StationSignage.Components.SS_VehicleIncomingData;nextVehicle0.Index">1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <matrixTransform />
+    </self>
+    <children>
+      <self itemName="Bike Icon">
+        <transform pivot="MiddleRight" alignment="Left" isAbsoluteScale="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="-0.8" y="-0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.075" y="0.075" z="0.02" />
+          <mustDraw formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/StationSignage.Components.SS_VehicleIncomingData;nextVehicle0.Index">1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <imageMesh atlas="StationSignage:StationIcons">
+          <mesh></mesh>
+          <image>BikeRoundIcon</image>
+        </imageMesh>
+        <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+          <color>FFFFFFFF</color>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <normalOpacity>0</normalOpacity>
+          <metallicOpacity>0</metallicOpacity>
+        </decalStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Wheelchair Icon">
+        <transform pivot="MiddleRight" alignment="Left" isAbsoluteScale="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="-0.7" y="-0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.075" y="0.075" z="0.02" />
+          <mustDraw formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/StationSignage.Components.SS_VehicleIncomingData;nextVehicle0.Index">1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <imageMesh atlas="StationSignage:StationIcons">
+          <mesh></mesh>
+          <image>WheelchairRoundIcon</image>
+        </imageMesh>
+        <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+          <color>FFFFFFFF</color>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <normalOpacity>0</normalOpacity>
+          <metallicOpacity>0</metallicOpacity>
+        </decalStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Occupancy title">
+        <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0.8" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.05" y="0.05" z="0.02" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <textMesh fontName="HelveticaWorld_Regular" rescaleHeightOnTextOverflow="true">
+          <text formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetName">NEW TEXT</text>
+          <MaxWidthMeters>1.6</MaxWidthMeters>
+        </textMesh>
+        <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+          <color>FFFF00FF</color>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <normalOpacity>0</normalOpacity>
+          <metallicOpacity>0</metallicOpacity>
+        </decalStyle>
+      </self>
+      <variable key="strKey" value="LevelOfOccupancy" />
+    </children>
+    <children>
+      <self itemName="Train Images">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="-0.2" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="1E-05" y="0" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <matrixTransform>
+          <offsetPosition>
+            <defaultValue x="0" y="-0.2" z="0" />
+          </offsetPosition>
+        </matrixTransform>
+      </self>
+      <children>
+        <self itemName="Train size scaler">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="0" y="0" z="0" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+            <mustDraw>1</mustDraw>
+            <instanceCount>-1</instanceCount>
+            <arrayInstances x="1" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <matrixTransform>
+            <scale>
+              <defaultValue x="0.65" y="0.65" z="0.65" />
+            </scale>
+          </matrixTransform>
+        </self>
+        <children>
+          <self itemName="Car Images">
+            <transform alignment="Z_Center" arrayAxisOrder="XYZ">
+              <offsetPosition x="0" y="-0" z="0" />
+              <offsetRotation x="-0" y="0" z="0" />
+              <scale x="0" y="1E-06" z="1" />
+              <mustDraw>1</mustDraw>
+              <instanceCount formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformVehiclePanel.OccupancyRates.Count">-1</instanceCount>
+              <arrayInstances x="8" y="1" z="1" />
+              <arraySpacing x="-0.32" y="0" z="0" />
+            </transform>
+            <layoutMesh>
+              <layout>StationSignage:_TV__CarOccupy</layout>
+            </layoutMesh>
+          </self>
+        </children>
+      </children>
+    </children>
+    <children>
+      <self itemName="Train Name">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="-0.35" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.04" y="0.04" z="0.02" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <textMesh fontName="HelveticaWorld_Regular" rescaleHeightOnTextOverflow="true">
+          <text formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform/StationSignage.Components.SS_VehicleIncomingData;nextVehicle0/&amp;BelzontWE.Builtin.WEVehicleFn;GetConvoyId"></text>
+          <MaxWidthMeters>1.6</MaxWidthMeters>
+        </textMesh>
+        <decalStyle decalFlags="32" affectSmoothness="false" drawOrder="0">
+          <color>FFFF00FF</color>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <normalOpacity>0</normalOpacity>
+          <metallicOpacity>0</metallicOpacity>
+        </decalStyle>
+      </self>
+    </children>
+  </children>
+</WELayout>

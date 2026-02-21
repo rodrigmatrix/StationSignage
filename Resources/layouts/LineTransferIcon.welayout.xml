@@ -1,7 +1,7 @@
 <WELayout>
   <self itemName="BG">
-     <transform alignment="Left" arrayAxisOrder="XYZ">
-      <offsetPosition x="-0.328999937" y="-1.60999966" z="0" />
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="-0.328999937" y="16.03" z="0" />
       <offsetRotation x="-0" y="0" z="0" />
       <scale x="0.27" y="0.27" z="1" />
       <mustDraw>1</mustDraw>
@@ -9,38 +9,41 @@
       <arrayInstances x="1" y="1" z="1" />
       <arraySpacing x="0" y="0" z="0" />
     </transform>
-    <imageMesh atlas="StationSignage:main">
+    <imageMesh atlas="StationSignage:LineBg">
+      <mesh></mesh>
       <image formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetLineBackgroundShape">LineBgSquare</image>
     </imageMesh>
     <defaultStyle>
       <color>FFFFFFFF</color>
-      <emissiveColor formulae="&amp;StationSignage.Formulas.LinesUtils;GetLineConnection.Color">FFFFFFFF</emissiveColor>
+      <emissiveColor formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetStationTransferIdx/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOrDefault/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor">FFFFFFFF</emissiveColor>
       <metallic>0</metallic>
       <smoothness>0</smoothness>
-      <emissiveIntensity formulae="&amp;BelzontWE.Builtin.WEEffectsFn;GetNightLight01.*7">3.04240346</emissiveIntensity>
+      <emissiveIntensity>0.229247838</emissiveIntensity>
       <emissiveExposureWeight>0</emissiveExposureWeight>
       <coatStrength>0</coatStrength>
-      <colorMask1 formulae="&amp;StationSignage.Formulas.LinesUtils;GetLineConnection.Color">FFFFFF</colorMask1>
-      <colorMask2 formulae="&amp;StationSignage.Formulas.LinesUtils;GetLineConnection.Color/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFF</colorMask2>
+      <colorMask1 formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetStationTransferIdx/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOrDefault/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor">FFFFFF</colorMask1>
+      <colorMask2 formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetStationTransferIdx/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOrDefault/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFF</colorMask2>
       <colorMask3>FFFFFF</colorMask3>
     </defaultStyle>
   </self>
   <children>
     <self itemName="ID">
-      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
         <offsetPosition x="0" y="0" z="0" />
         <offsetRotation x="-0" y="0" z="0" />
         <scale x="0.15" y="0.15" z="1" />
         <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="LineIconFont" maxWidthMeters="0.22">
-        <text formulae="&amp;StationSignage.Formulas.LinesUtils;GetLineConnection.Number">A1</text>
+      <textMesh fontName="LineIconFont">
+        <text formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetStationTransferIdx/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOrDefault/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineAcronym">A1</text>
+        <MaxWidthMeters>0.22</MaxWidthMeters>
       </textMesh>
       <defaultStyle>
-        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetLineConnection.OnPrimaryColor">FFFFFFFF</color>
-        <emissiveColor formulae="&amp;StationSignage.Formulas.LinesUtils;GetLineStatus.Color/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">626262FF</emissiveColor>
+        <color formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetStationTransferIdx/&amp;StationSignage.Formulas.PlatformFormulas;GetFirstLineOrDefault/&amp;StationSignage.Formulas.LineEntityFormulas;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
+        <emissiveColor formulae="&amp;StationSignage.Formulas.LinesFormulas;GetLineStatus.Color/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">626262FF</emissiveColor>
         <metallic>0</metallic>
         <smoothness>0</smoothness>
         <emissiveIntensity formulae="&amp;BelzontWE.Builtin.WEEffectsFn;GetNightLight01.*7">15.5927734</emissiveIntensity>
