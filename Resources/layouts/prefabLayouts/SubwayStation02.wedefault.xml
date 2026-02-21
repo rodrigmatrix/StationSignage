@@ -489,7 +489,7 @@
                 <arrayInstances x="1" y="1" z="1" />
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
-              <imageMesh atlas="StationSignage:main">
+              <imageMesh atlas="StationSignage:StationIcons">
                 <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
@@ -647,7 +647,7 @@
                 <arrayInstances x="1" y="1" z="1" />
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
-              <imageMesh atlas="StationSignage:main">
+              <imageMesh atlas="StationSignage:StationIcons">
                 <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
@@ -993,7 +993,7 @@
                 <arrayInstances x="1" y="1" z="1" />
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
-              <imageMesh atlas="StationSignage:main">
+              <imageMesh atlas="StationSignage:StationIcons">
                 <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
@@ -1151,7 +1151,7 @@
                 <arrayInstances x="1" y="1" z="1" />
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
-              <imageMesh atlas="StationSignage:main">
+              <imageMesh atlas="StationSignage:StationIcons">
                 <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
@@ -2309,7 +2309,7 @@
                 <arrayInstances x="1" y="1" z="1" />
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
-              <imageMesh atlas="StationSignage:main">
+              <imageMesh atlas="StationSignage:StationIcons">
                 <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
@@ -2454,7 +2454,7 @@
                 <layout>StationSignage:ExitRight</layout>
               </layoutMesh>
             </self>
-            <variable key="images" value="CircleA,CircleB,ToRightArroW" />
+            <variable key="images" value="CircleA,CircleB,TopRightArrow" />
           </children>
           <children>
             <self itemName="Emergency Exit">
@@ -2467,7 +2467,7 @@
                 <arrayInstances x="1" y="1" z="1" />
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
-              <imageMesh atlas="StationSignage:main">
+              <imageMesh atlas="StationSignage:StationIcons">
                 <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
@@ -2615,7 +2615,7 @@
                 <arrayInstances x="1" y="1" z="1" />
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
-              <imageMesh atlas="StationSignage:main">
+              <imageMesh atlas="StationSignage:StationIcons">
                 <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>
@@ -2665,7 +2665,7 @@
                 <layout>StationSignage:ExitLeft</layout>
               </layoutMesh>
             </self>
-            <variable key="images" value="CircleB,CircleA,TopLeftArroW" />
+            <variable key="images" value="CircleB,CircleA,TopLeftArrow" />
           </children>
         </children>
         <children>
@@ -2760,7 +2760,7 @@
                 <layout>StationSignage:ExitRight</layout>
               </layoutMesh>
             </self>
-            <variable key="images" value="CircleA,CircleC,TopRightArroW" />
+            <variable key="images" value="CircleA,CircleC,TopRightArrow" />
           </children>
           <children>
             <self itemName="Emergency Exit">
@@ -2773,7 +2773,7 @@
                 <arrayInstances x="1" y="1" z="1" />
                 <arraySpacing x="0" y="0" z="0" />
               </transform>
-              <imageMesh atlas="StationSignage:main">
+              <imageMesh atlas="StationSignage:StationIcons">
                 <mesh></mesh>
                 <image>EmergencyExitLeft</image>
               </imageMesh>

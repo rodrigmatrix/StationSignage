@@ -70,13 +70,21 @@ namespace StationSignage
             var modDir = Path.GetDirectoryName(asset.path);
 
             var imagesDirectory = Path.Combine(modDir, "atlases");
-            if (Directory.Exists(imagesDirectory))
+            var atlases = Directory.GetDirectories(imagesDirectory, "*", SearchOption.TopDirectoryOnly);
+            foreach (var atlasFolder in atlases)
             {
-                var atlases = Directory.GetDirectories(imagesDirectory, "*", SearchOption.TopDirectoryOnly);
-                foreach (var atlasFolder in atlases)
+                var files = Directory.GetFiles(atlasFolder, "*.png");
+    
+                if (files.Length == 0)
                 {
-                    WEImageManagementBridge.RegisterImageAtlas(typeof(Mod).Assembly, Path.GetFileName(atlasFolder), Directory.GetFiles(atlasFolder, "*.png"));
+                    continue;
                 }
+
+                WEImageManagementBridge.RegisterImageAtlas(
+                    typeof(Mod).Assembly, 
+                    Path.GetFileName(atlasFolder), 
+                    files
+                );
             }
 
             var layoutsDirectory = Path.Combine(modDir, "layouts");
