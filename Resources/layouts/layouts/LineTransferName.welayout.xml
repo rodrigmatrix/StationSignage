@@ -1,0 +1,28 @@
+<WELayout>
+  <self itemName="Destination">
+    <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="-2.94700027" y="10.7550011" z="0.01800002" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="0.107656248" y="0.107656248" z="1" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <textMesh fontName="" maxWidthMeters="1.8">
+      <text formulae="&amp;StationSignage.Formulas.LinesUtils;GetLineConnection.Destination">NEW TEXT</text>
+    </textMesh>
+    <defaultStyle>
+      <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.OnPrimaryColor">FFFFFFFF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+</WELayout>

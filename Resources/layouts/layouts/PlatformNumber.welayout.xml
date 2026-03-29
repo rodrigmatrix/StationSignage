@@ -1,0 +1,98 @@
+<WELayout>
+  <self itemName="Platform">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="-4.855999" y="21.5299988" z="0.00299999863" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="0" y="0" z="1" />
+      <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <whiteMesh />
+    <defaultStyle>
+      <color>FFFFFFFF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+  <children>
+    <self itemName="Platform">
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="1.002" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.240781263" y="0.240781263" z="1" />
+        <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular" maxWidthMeters="1.3">
+        <text formulae="&amp;StationSignage.Formulas.NamesFormulas;GetPlatformName">Boarding dawd awd wad</text>
+      </textMesh>
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.OnPrimaryColor">000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Destination">
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.9999999" y="-0.329999983" z="0.01" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.139687508" y="0.139687508" z="1" />
+        <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular" maxWidthMeters="1.55">
+        <text formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Destination">&amp;StationSignage.Formulas.SubwayFormulas;GetFirstPlatformDestinationText</text>
+      </textMesh>
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.OnPrimaryColor">000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Images">
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="2.28700018" y="-0.137000009" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0" y="0" z="1" />
+        <mustDraw formulae="&amp;StationSignage.Formulas.LinesUtils;PlatformHasLine">0</mustDraw>
+        <instanceCount formulae="&amp;StationSignage.Formulas.DisplayFormulas;GetImageList.Count">1</instanceCount>
+        <arrayInstances x="4" y="1" z="1" />
+        <arraySpacing x="0.30906" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationSignage:ImageSmallOnPrimary</layout>
+      </layoutMesh>
+    </self>
+  </children>
+</WELayout>

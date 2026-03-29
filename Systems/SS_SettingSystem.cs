@@ -1,10 +1,10 @@
 ﻿using Colossal.Serialization.Entities;
-using Unity.Entities;
+using Game;
 using static StationSignage.Settings;
 
 namespace StationSignage.Systems
 {
-    public partial class SS_SettingSystem : SystemBase, IDefaultSerializable
+    public partial class SS_SettingSystem : GameSystemBase, IDefaultSerializable
     {
         private const uint CURRENT_VERSION = 0;
 
@@ -12,7 +12,6 @@ namespace StationSignage.Systems
 
         protected override void OnCreate()
         {
-            base.OnCreate();
             Instance = this;
         }
 
@@ -52,7 +51,7 @@ namespace StationSignage.Systems
         }
 
         protected override void OnUpdate()
-        {            
+        {
         }
     }
 }

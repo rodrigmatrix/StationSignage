@@ -1,5 +1,4 @@
 using Colossal.Entities;
-using Game;
 using Game.Buildings;
 using Game.Common;
 using Game.Prefabs;
@@ -7,11 +6,9 @@ using Game.Routes;
 using StationSignage.BridgeWE;
 using System.Collections.Generic;
 using Unity.Burst;
-using Unity.Burst.Intrinsics;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
-using UnityEngine;
 
 namespace StationSignage.Systems
 {
@@ -101,12 +98,14 @@ namespace StationSignage.Systems
         }
     }
 
-    public partial class SS_BuildingLineCacheSystem : SystemBase
+    public partial class SS_BuildingLineCacheSystem : SS_BasicSystem
     {
         public static SS_BuildingLineCacheSystem Instance { get; private set; }
 
+        protected override AllowedPhase UpdatePhase => AllowedPhase.Modification5;
+
         private readonly Dictionary<Entity, (List<LineDescriptor> desc, int frameCalculated)> m_buildingCacheData = [];
-        protected override void OnCreate()
+        protected override void OnCreateWithBarrier()
         {
             Instance = this;
         }
@@ -171,7 +170,7 @@ namespace StationSignage.Systems
                 Lines = new NativeList<LineDescriptor>(Allocator.TempJob)
             };
 
-            job.Run();
+            job.Schedule().Complete();
 
             // Copy results and resolve acronyms from managed code
             foreach (var line in job.Lines)

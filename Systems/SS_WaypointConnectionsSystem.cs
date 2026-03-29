@@ -16,9 +16,8 @@ using Unity.Entities;
 
 namespace StationSignage.Systems
 {
-    public partial class SS_WaypointConnectionsSystem : GameSystemBase, IDefaultSerializable
+    public partial class SS_WaypointConnectionsSystem : SS_BasicSystem, IDefaultSerializable
     {
-        private ModificationBarrier1 m_ModificationBarrier1;
         private EntityQuery m_PathReadyQuery;
         private EntityQuery m_unmappedOrPreDirtyStops;
         private EntityQuery m_dirtyRoutes;
@@ -26,6 +25,8 @@ namespace StationSignage.Systems
         private ushort modificationIdx;
         private static SS_WaypointConnectionsSystem Instance;
         public static ushort ConnectionsVersion => Instance.modificationIdx;
+
+        protected override AllowedPhase UpdatePhase => AllowedPhase.Modification3;
 
         internal void IncreaseVersion() => modificationIdx++;
 
@@ -53,10 +54,9 @@ namespace StationSignage.Systems
             modificationIdx = 0;
         }
 
-        protected override void OnCreate()
-        {
-            Instance = this;
-            m_ModificationBarrier1 = World.GetOrCreateSystemManaged<ModificationBarrier1>();
+        protected override void OnCreateWithBarrier()
+        {            
+            Instance = this;            
             m_PathReadyQuery = GetEntityQuery([
                 ComponentType.ReadOnly<Event>(),
                 ComponentType.ReadOnly<PathUpdated>()
@@ -130,7 +130,7 @@ namespace StationSignage.Systems
                     m_routeWaypointLookup = GetBufferLookup<RouteWaypoint>(true),
                     m_OwnerLookup = GetComponentLookup<Owner>(true),
                     m_routeLookup = GetComponentLookup<Route>(true),
-                    m_cmdBuffer = m_ModificationBarrier1.CreateCommandBuffer().AsParallelWriter(),
+                    m_cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                     frameRequest = ++modificationIdx
                 }.ScheduleParallel(m_PathReadyQuery, Dependency).Complete();
             }
@@ -141,7 +141,7 @@ namespace StationSignage.Systems
                     m_entityTypeHandle = GetEntityTypeHandle(),
                     m_routeLookup = GetComponentLookup<Route>(true),
                     m_routeWaypointLookup = GetBufferLookup<RouteWaypoint>(true),
-                    m_cmdBuffer = m_ModificationBarrier1.CreateCommandBuffer().AsParallelWriter(),
+                    m_cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                     frameRequest = modificationIdx
                 }.ScheduleParallel(m_dirtyRoutes, Dependency).Complete();
             }
@@ -150,7 +150,7 @@ namespace StationSignage.Systems
                 new UnmappedRouteWaypointsJob
                 {
                     entityTypeHandle = GetEntityTypeHandle(),
-                    m_cmdBuffer = m_ModificationBarrier1.CreateCommandBuffer().AsParallelWriter(),
+                    m_cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                     frameRequest = modificationIdx
                 }.ScheduleParallel(m_unmappedOrPreDirtyStops, Dependency).Complete();
             }
@@ -159,7 +159,7 @@ namespace StationSignage.Systems
                 new DirtyRouteWaypointUpdate
                 {
                     entityTypeHandle = GetEntityTypeHandle(),
-                    m_cmdBuffer = m_ModificationBarrier1.CreateCommandBuffer().AsParallelWriter(),
+                    m_cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                     frameRequest = modificationIdx,
                     m_ownerLookup = GetComponentLookup<Owner>(true),
                     m_routeWaypointLookup = GetBufferLookup<RouteWaypoint>(true),

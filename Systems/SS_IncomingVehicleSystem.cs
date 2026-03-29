@@ -17,13 +17,14 @@ using Unity.Mathematics;
 
 namespace StationSignage.Formulas
 {
-    public partial class SS_IncomingVehicleSystem : GameSystemBase
+    public partial class SS_IncomingVehicleSystem : SS_BasicSystem
     {
         public uint CurrentFrame => m_simulationSystem.frameIndex >> 2;
         private SimulationSystem m_simulationSystem;
-        private EndFrameBarrier m_endFrameBarrier;
         private EntityQuery m_dirtyTvInfoVehicles;
         public static SS_IncomingVehicleSystem Instance { get; private set; }
+
+        protected override AllowedPhase UpdatePhase => AllowedPhase.Modification3;
 
         public override int GetUpdateInterval(SystemUpdatePhase phase) => 2;
 
@@ -37,7 +38,7 @@ namespace StationSignage.Formulas
             var found = EntityManager.TryGetComponent<SS_VehicleTvData>(vehicleData.nextVehicle0, out var data);
             if (!found || !data.IsValid())
             {
-                m_endFrameBarrier.CreateCommandBuffer().AddComponent<SS_VehicleTvDataDirty>(vehicleData.nextVehicle0);
+                EntityManager.AddComponent<SS_VehicleTvDataDirty>(vehicleData.nextVehicle0);
             }
             return !found ? GetDefaultPlatformData(platform) : data;
         }
@@ -74,22 +75,20 @@ namespace StationSignage.Formulas
                 }
                 if (!hasData)
                 {
-                    m_endFrameBarrier.CreateCommandBuffer().AddComponent(platform, tvData);
+                    EntityManager.AddComponentData(platform, tvData);
                 }
                 else
                 {
-                    m_endFrameBarrier.CreateCommandBuffer().SetComponent(platform, tvData);
+                    EntityManager.SetComponentData(platform, tvData);
                 }
             }
             return tvData;
         }
 
-        protected override void OnCreate()
+        protected override void OnCreateWithBarrier()
         {
-            base.OnCreate();
             Instance = this;
-            m_simulationSystem = World.GetOrCreateSystemManaged<SimulationSystem>();
-            m_endFrameBarrier = World.GetOrCreateSystemManaged<EndFrameBarrier>();
+            m_simulationSystem = World.GetOrCreateSystemManaged<SimulationSystem>();            
             m_dirtyTvInfoVehicles = GetEntityQuery(new EntityQueryDesc[] {
                 new()
                 {
@@ -124,7 +123,7 @@ namespace StationSignage.Formulas
                     passengerLookup = GetBufferLookup<Passenger>(true),
                     pathElementLookup = GetBufferLookup<PathElement>(true),
                     layoutElementLookup = GetBufferLookup<LayoutElement>(true),
-                    cmdBuffer = m_endFrameBarrier.CreateCommandBuffer().AsParallelWriter(),
+                    cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                     publicTransportVehicleDataLookup = GetComponentLookup<PublicTransportVehicleData>(true),
                     frame = CurrentFrame,
                     tvDataLookup = GetComponentLookup<SS_VehicleTvData>(true),

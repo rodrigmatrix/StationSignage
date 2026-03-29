@@ -1,0 +1,136 @@
+<WELayout>
+  <self itemName="Station Name">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="0" y="0" z="0" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="0" y="0" z="1" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <whiteMesh />
+    <defaultStyle>
+      <color>FFFFFFFF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+  <children>
+    <self itemName="Station Name">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0.132" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.3671875" y="0.3671875" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular" maxWidthMeters="3">
+        <text formulae="&amp;StationSignage.Formulas.NamesFormulas;GetBuildingName">Aspen Square</text>
+      </textMesh>
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLineCenter.OnPrimaryColor">000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Operator Icon">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="2.023" y="0.139000013" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.5890625" y="0.5890625" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <imageMesh atlas="StationSignage:main">
+        <image formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLineCenter.OperatorIcon">Operator04Icon</image>
+      </imageMesh>
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLineCenter.OnPrimaryColor">000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Divider">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.305" y="-0.242" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="4" y="0.03" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLineCenter.OnPrimaryColor">000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Line Name">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.213000014" y="-0.377" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.112187505" y="0.112187505" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular">
+        <text formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLineCenter.Name">Subway Line 6</text>
+      </textMesh>
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLineCenter.OnPrimaryColor">000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+</WELayout>

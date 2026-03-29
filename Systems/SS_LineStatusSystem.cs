@@ -18,10 +18,12 @@ using Unity.Jobs;
 
 namespace StationSignage.Systems
 {
-    public partial class SS_LineStatusSystem : GameSystemBase
+    public partial class SS_LineStatusSystem : SS_BasicSystem
     {
         internal static SS_LineStatusSystem Instance { get; private set; }
         public uint GameSimulationFrame => _simulationSystem.frameIndex;
+
+        protected override AllowedPhase UpdatePhase => AllowedPhase.Modification3;
 
         private SimulationSystem _simulationSystem;
         private EntityQuery _linesRequiringUpdateQuery;
@@ -29,9 +31,8 @@ namespace StationSignage.Systems
 
         public override int GetUpdateInterval(SystemUpdatePhase phase) => 8;
 
-        protected override void OnCreate()
+        protected override void OnCreateWithBarrier()
         {
-            base.OnCreate();
             Instance = this;
             _simulationSystem = World.GetOrCreateSystemManaged<SimulationSystem>();            
             _linesStatusesQuery = GetEntityQuery(new EntityQueryDesc[] {
@@ -97,7 +98,7 @@ namespace StationSignage.Systems
                     numberLookup = GetComponentLookup<RouteNumber>(true),
                     prefabRefLookup = GetComponentLookup<PrefabRef>(true),
                     transportLineLookup = GetComponentLookup<TransportLineData>(true),
-                    cmdBuffer = World.GetOrCreateSystemManaged<EndFrameBarrier>().CreateCommandBuffer().AsParallelWriter()
+                    cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter()
                 }.ScheduleParallel(_linesRequiringUpdateQuery, Dependency).Complete();
             }
 

@@ -1,0 +1,214 @@
+<WELayout>
+  <self itemName="Station Name Center">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="-49.1539955" y="7.664" z="0" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="0" y="0" z="1" />
+      <mustDraw>0</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <whiteMesh />
+    <defaultStyle>
+      <color>FFFFFFFF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+  <children>
+    <self itemName="Top">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="39.9899979" y="12.17" z="0.154999971" />
+        <offsetRotation x="90" y="0" z="0" />
+        <scale x="14" y="0.3090625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetCenterPlatformLineColor">FFA50FFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Bottom">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="39.9899979" y="11.1729994" z="0.155000031" />
+        <offsetRotation x="90" y="0" z="0" />
+        <scale x="14" y="0.3090625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetCenterPlatformLineColor">FFA50FFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Right">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="33.0000076" y="11.669" z="0.151998729" />
+        <offsetRotation x="-0" y="90" z="90" />
+        <scale x="1" y="0.3090625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetCenterPlatformLineColor">FFA50FFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Left">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="46.9910049" y="11.669" z="0.152001187" />
+        <offsetRotation x="-0" y="90" z="90" />
+        <scale x="1" y="0.3090625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetCenterPlatformLineColor">FFA50FFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Right Platform">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="39.988" y="11.67" z="0.2999999" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="14" y="1" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Station Name">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0" y="0" z="1" />
+          <mustDraw>0</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:StationNameLarge</layout>
+        </layoutMesh>
+      </self>
+    </children>
+  </children>
+  <children>
+    <self itemName="Left Platform">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="39.988" y="11.67" z="-1.78813934E-07" />
+        <offsetRotation x="-0" y="180" z="0" />
+        <scale x="14" y="1" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color formulae="&amp;StationSignage.Formulas.LinesUtils;GetPlatformLine.Color">FF9F00FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Station Name">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0" y="0" z="1" />
+          <mustDraw>0</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:StationNameLarge</layout>
+        </layoutMesh>
+      </self>
+    </children>
+  </children>
+</WELayout>

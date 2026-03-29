@@ -1,4 +1,5 @@
-﻿using Game.Routes;
+﻿using Game.Common;
+using Game.Routes;
 using Game.Tools;
 using StationSignage.Components;
 using Unity.Burst;
@@ -8,12 +9,14 @@ using Unity.Entities;
 
 namespace StationSignage.Systems
 {
-    public partial class SS_ApplyRouteWatchSystem : SystemBase
+    public partial class SS_ApplyRouteWatchSystem : SS_BasicSystem
     {
-        private ToolOutputBarrier m_ToolOutputBarrier;
+
         private EntityQuery m_TempQuery;
 
-        protected override void OnCreate()
+        protected override AllowedPhase UpdatePhase => AllowedPhase.ToolUpdate;
+
+        protected override void OnCreateWithBarrier()
         {
             m_TempQuery = base.GetEntityQuery(
         [
@@ -21,30 +24,29 @@ namespace StationSignage.Systems
                 {
                     All =
                     [
-                        ComponentType.ReadOnly<Temp>()
+                        ComponentType.ReadOnly<Waypoint>(),
+                        ComponentType.ReadOnly<Temp>(),
+                        ComponentType.ReadOnly<Deleted>()
                     ],
                     Any =
                     [
-                        ComponentType.ReadOnly<Waypoint>()
+                    ],
+                    None = [
                     ]
                 }
-        ]);
+            ]);
+            RequireForUpdate(m_TempQuery);
         }
+
         protected override void OnUpdate()
         {
-            if (m_TempQuery.IsEmpty)
+            new MarkDirtyConnectionsOnToolApplyJob
             {
-                return;
-            }
-
-			m_ToolOutputBarrier ??= World.GetOrCreateSystemManaged<ToolOutputBarrier>();
-			new MarkDirtyConnectionsOnToolApplyJob
-            {
-                m_cmdBuffer = m_ToolOutputBarrier.CreateCommandBuffer().AsParallelWriter(),
+                m_cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                 m_EntityType = GetEntityTypeHandle(),
-                m_TempType = GetComponentTypeHandle<Temp>(true),
+                m_TempType = GetComponentLookup<Temp>(true),
                 m_WaypointType = GetComponentTypeHandle<Waypoint>(true),
-                m_WaypointConnectionData = GetComponentLookup<Connected>(true)
+                m_WaypointConnectionData = GetComponentLookup<Connected>(true),
             }.ScheduleParallel(m_TempQuery, Dependency).Complete();
         }
         [BurstCompile]
@@ -54,28 +56,31 @@ namespace StationSignage.Systems
             {
                 NativeArray<Waypoint> nativeArray = chunk.GetNativeArray(ref m_WaypointType);
                 NativeArray<Entity> nativeArray2 = chunk.GetNativeArray(m_EntityType);
-                NativeArray<Temp> nativeArray3 = chunk.GetNativeArray(ref m_TempType);
                 for (int i = 0; i < nativeArray.Length; i++)
                 {
                     Entity entity = nativeArray2[i];
-                    Temp temp = nativeArray3[i];
-                    if (m_WaypointConnectionData.TryGetComponent(entity, out var connected))
+                    if (m_TempType.TryGetComponent(entity, out var temp))
                     {
-                        m_cmdBuffer.RemoveComponent<SS_VehicleIncomingData>(unfilteredChunkIndex, connected.m_Connected);
-                    }
-                    if (m_WaypointConnectionData.TryGetComponent(temp.m_Original, out var connected2)){
+                        if (m_WaypointConnectionData.TryGetComponent(entity, out var connected) && m_WaypointIncomingData.HasComponent(connected.m_Connected))
+                        {
+                            m_cmdBuffer.RemoveComponent<SS_VehicleIncomingData>(unfilteredChunkIndex, connected.m_Connected);
+                        }
+                        if (m_WaypointConnectionData.TryGetComponent(temp.m_Original, out var connected2) && m_WaypointIncomingData.HasComponent(connected2.m_Connected))
+                        {
 
-                        m_cmdBuffer.RemoveComponent<SS_VehicleIncomingData>(unfilteredChunkIndex, connected2.m_Connected);
+                            m_cmdBuffer.RemoveComponent<SS_VehicleIncomingData>(unfilteredChunkIndex, connected2.m_Connected);
+                        }
+                        m_cmdBuffer.AddComponent<SS_WaypointDestinationConnectionsDirtyPre>(unfilteredChunkIndex, entity);
+                        m_cmdBuffer.AddComponent<SS_WaypointDestinationConnectionsDirtyPre>(unfilteredChunkIndex, temp.m_Original);
                     }
-                    m_cmdBuffer.AddComponent<SS_WaypointDestinationConnectionsDirtyPre>(unfilteredChunkIndex, entity);
-                    m_cmdBuffer.AddComponent<SS_WaypointDestinationConnectionsDirtyPre>(unfilteredChunkIndex, temp.m_Original);
                 }
             }
             public EntityCommandBuffer.ParallelWriter m_cmdBuffer;
             [ReadOnly] public EntityTypeHandle m_EntityType;
-            [ReadOnly] public ComponentTypeHandle<Temp> m_TempType;
+            [ReadOnly] public ComponentLookup<Temp> m_TempType;
             [ReadOnly] public ComponentTypeHandle<Waypoint> m_WaypointType;
             [ReadOnly] public ComponentLookup<Connected> m_WaypointConnectionData;
+            [ReadOnly] public ComponentLookup<SS_VehicleIncomingData> m_WaypointIncomingData;
         }
     }
 }

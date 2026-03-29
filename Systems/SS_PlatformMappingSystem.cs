@@ -1,5 +1,4 @@
 ﻿using Colossal.Entities;
-using Game;
 using Game.Common;
 using Game.Objects;
 using Game.Prefabs;
@@ -8,6 +7,7 @@ using Game.SceneFlow;
 using Game.Tools;
 using StationSignage.Components;
 using StationSignage.Enums;
+using StationSignage.Systems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,19 +19,20 @@ using UnityEngine;
 using Transform = Game.Objects.Transform;
 using TransportStop = Game.Routes.TransportStop;
 
-public partial class SS_PlatformMappingSystem : SystemBase
+public partial class SS_PlatformMappingSystem : SS_BasicSystem
 {
 
     private EntityQuery m_connectableRoutesNotMapped;
     private EntityQuery m_connectionsUpdatedPlatforms;
     private EntityQuery m_resetWaypointsQuery;
-    private EndFrameBarrier m_endFrameBarrier;
     public static uint CacheVersion { get; private set; }
+
+    protected override AllowedPhase UpdatePhase => AllowedPhase.Modification3;
+
     private byte dirtyCooldown = 0;
 
-    protected override void OnCreate()
+    protected override void OnCreateWithBarrier()
     {
-        m_endFrameBarrier = World.GetOrCreateSystemManaged<EndFrameBarrier>();
         m_connectableRoutesNotMapped = GetEntityQuery(new EntityQueryDesc[] {
                 new() {
                     Any =
@@ -75,6 +76,17 @@ public partial class SS_PlatformMappingSystem : SystemBase
                         ComponentType.ReadOnly<SS_PlatformData>(),
                         ComponentType.ReadOnly<Temp>(),
                         ComponentType.ReadOnly<Deleted>(),
+                    ]
+                },
+                new() {
+                    All =
+                    [
+                        ComponentType.ReadOnly<SS_PlatformData>(),
+                        ComponentType.ReadOnly<Deleted>(),
+                    ],
+                    None =
+                    [
+                        ComponentType.ReadOnly<Temp>(),
                     ]
                 }
             }
@@ -141,13 +153,13 @@ public partial class SS_PlatformMappingSystem : SystemBase
         }
         if (shallReset)
         {
-            m_endFrameBarrier.CreateCommandBuffer().RemoveComponent<SS_WaypointDestinationConnections>(m_resetWaypointsQuery, EntityQueryCaptureMode.AtPlayback);
+            Barrier.CreateCommandBuffer().RemoveComponent<SS_WaypointDestinationConnections>(m_resetWaypointsQuery, EntityQueryCaptureMode.AtPlayback);
             shallReset = false;
         }
         if (!m_connectableRoutesNotMapped.IsEmptyIgnoreFilter)
         {
             using var output = new NativeParallelHashSet<PairEntityRoute>(m_connectableRoutesNotMapped.CalculateEntityCount() * 2, Allocator.Temp);
-            var cmdBuffer = m_endFrameBarrier.CreateCommandBuffer();
+            var cmdBuffer = Barrier.CreateCommandBuffer();
             Dependency = new StopMappingJob
             {
                 m_attachedLookup = GetComponentLookup<Attached>(true),
@@ -198,6 +210,10 @@ public partial class SS_PlatformMappingSystem : SystemBase
 
                 foreach (var route in sortedValues)
                 {
+                    if (!EntityManager.Exists(route.routePlatformData.platformData) || EntityManager.HasComponent<Deleted>(route.routePlatformData.platformData))
+                    {
+                        continue;
+                    }
                     buffer.Add(route.routePlatformData);
                     transportTypeCounter.TryGetValue(route.Item3, out var counter);
                     var data = new SS_PlatformData
@@ -219,7 +235,7 @@ public partial class SS_PlatformMappingSystem : SystemBase
             new ConnectionsSortingJob
             {
                 m_EntityType = GetEntityTypeHandle(),
-                cmdBuffer = m_endFrameBarrier.CreateCommandBuffer().AsParallelWriter(),
+                cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                 m_connectedRouteLookup = GetBufferLookup<ConnectedRoute>(true),
                 m_waypointDestinationsLookup = GetBufferLookup<SS_WaypointDestinationConnections>(true),
                 m_routeNumberLookup = GetComponentLookup<RouteNumber>(true)
@@ -296,7 +312,7 @@ public partial class SS_PlatformMappingSystem : SystemBase
             public readonly SS_WaypointDestinationConnections connection = connection;
             private readonly int routeNumber = routeNumber;
 
-            private readonly ulong AsULong => ((uint)routeNumber) | ((ulong)connection.Importance << 32) | ((ulong)(connection.isPassenger ? 1 : 0) << 40) | ((ulong)(connection.isCargo ? 1 : 0) << 41);
+            private readonly ulong AsULong => ((uint)routeNumber) | ((ulong)connection.Importance.GetEffectiveImportance() << 32) | ((ulong)(connection.isPassenger ? 1 : 0) << 40) | ((ulong)(connection.isCargo ? 1 : 0) << 41);
 
             public int Compare(WaypointDestinationSortable x, WaypointDestinationSortable y)
             {

@@ -55,7 +55,10 @@
 		</Reference>
 		<Reference Include="Unity.Mathematics">
 			<Private>false</Private>
-		</Reference>
+		</Reference>  
+    <Reference Include="Colossal.OdinSerializer">
+      <Private>False</Private>
+    </Reference>
 	</ItemGroup>
 
   <ItemGroup>

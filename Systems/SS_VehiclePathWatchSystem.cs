@@ -17,21 +17,22 @@ using Unity.Jobs;
 
 namespace StationSignage.Systems
 {
-    public partial class SS_VehiclePathWatchSystem : GameSystemBase
+    public partial class SS_VehiclePathWatchSystem : SS_BasicSystem
     {
         private EntityQuery m_vehiclesWithNewPathfind;
-        private EntityQuery m_stopsWithoutIncomingInfo;
-        private EndFrameBarrier m_endFrameBarrier;
+        private EntityQuery m_stopsWithoutIncomingInfo;        
         private static SS_VehiclePathWatchSystem Instance;
+
+        protected override AllowedPhase UpdatePhase => AllowedPhase.Modification3;
 
         public override int GetUpdateInterval(SystemUpdatePhase phase)
         {
             return 8;
         }
 
-        protected override void OnCreate()
+        protected override void OnCreateWithBarrier()
         {
-            m_endFrameBarrier = World.GetOrCreateSystemManaged<EndFrameBarrier>();
+            
             m_vehiclesWithNewPathfind = GetEntityQuery([
                 ComponentType.ReadOnly<SS_DirtyVehicle>()
             ]);
@@ -52,8 +53,9 @@ namespace StationSignage.Systems
                 new HarmonyMethod(GetType().GetMethod(nameof(BeforeProcessResults), Mod.allFlags)));
 
             Instance = this;
-
         }
+
+        
 
         protected override void OnUpdate()
         {
@@ -69,7 +71,7 @@ namespace StationSignage.Systems
                     m_connectedLookup = GetComponentLookup<Connected>(true),
                     m_ownerLookup = GetComponentLookup<Owner>(true),
                     m_pathElementLookup = GetBufferLookup<PathElement>(true),
-                    m_cmdBuffer = m_endFrameBarrier.CreateCommandBuffer().AsParallelWriter(),
+                    m_cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                     m_carLaneLookup = GetComponentLookup<CarCurrentLane>(true),
                     m_waterLaneLookup = GetComponentLookup<WatercraftCurrentLane>(true),
                     m_airLaneLookup = GetComponentLookup<AircraftCurrentLane>(true),
@@ -93,7 +95,7 @@ namespace StationSignage.Systems
                 m_connectedLinesLookup = GetBufferLookup<ConnectedRoute>(true),
                 m_ownerLookup = GetComponentLookup<Owner>(true),
                 m_pathElementLookup = GetBufferLookup<PathElement>(true),
-                m_cmdBuffer = m_endFrameBarrier.CreateCommandBuffer().AsParallelWriter(),
+                m_cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter(),
                 m_carLaneLookup = GetComponentLookup<CarCurrentLane>(true),
                 m_waterLaneLookup = GetComponentLookup<WatercraftCurrentLane>(true),
                 m_airLaneLookup = GetComponentLookup<AircraftCurrentLane>(true),
@@ -109,17 +111,12 @@ namespace StationSignage.Systems
             for (int i = 0; i < list.m_Items.Count; i++)
             {
                 var action = list.m_Items[i];
-                EntityCommandBuffer cmdBuffer = default;
                 if ((action.m_Flags & PathFlags.Scheduled) != 0
                     && action.m_Action.data.m_State == PathfindActionState.Completed
                     && em.HasComponent<CurrentRoute>(action.m_Owner)
                     && em.TryGetComponent<PathInformation>(action.m_Owner, out var pathInformation))
                 {
-                    if (!cmdBuffer.IsCreated)
-                    {
-                        cmdBuffer = Instance.m_endFrameBarrier.CreateCommandBuffer();
-                    }
-                    cmdBuffer.AddComponent(action.m_Owner, new SS_DirtyVehicle
+                    Instance.EntityManager.AddComponentData(action.m_Owner, new SS_DirtyVehicle
                     {
                         oldTarget = pathInformation.m_Destination,
                     });

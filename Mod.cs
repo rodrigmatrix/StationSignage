@@ -2,6 +2,7 @@
 using Colossal.Core;
 using Colossal.IO.AssetDatabase;
 using Colossal.Logging;
+using Colossal.OdinSerializer.Utilities;
 using Game;
 using Game.Modding;
 using Game.SceneFlow;
@@ -41,18 +42,52 @@ namespace StationSignage
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEn(m_Setting));
             AssetDatabase.global.LoadSettings(nameof(StationSignage), m_Setting, new Settings(this));
 
-            updateSystem.UpdateAt<SS_LineStatusSystem>(SystemUpdatePhase.UIUpdate);
-            updateSystem.UpdateAt<SS_RoutePathWatchSystem>(SystemUpdatePhase.Modification1);
-            updateSystem.UpdateAt<SS_WaypointConnectionsSystem>(SystemUpdatePhase.Modification1);
-            updateSystem.UpdateAfter<SS_VehiclePathWatchSystem>(SystemUpdatePhase.MainLoop);
-            updateSystem.UpdateAfter<SS_PlatformMappingSystem>(SystemUpdatePhase.UIUpdate);
-            updateSystem.UpdateAfter<SS_IncomingVehicleSystem>(SystemUpdatePhase.MainLoop);
-            updateSystem.UpdateAfter<SS_ApplyRouteWatchSystem>(SystemUpdatePhase.ApplyTool);
-            updateSystem.UpdateAfter<SS_BuildingLineCacheSystem>(SystemUpdatePhase.MainLoop);
+            RegisterBaseModificationSystems(updateSystem);
+            //updateSystem.UpdateAt<SS_LineStatusSystem>(SystemUpdatePhase.UIUpdate);
+            //updateSystem.UpdateAt<SS_RoutePathWatchSystem>(SystemUpdatePhase.Modification1);
+            //updateSystem.UpdateAt<SS_WaypointConnectionsSystem>(SystemUpdatePhase.Modification1);
+            //updateSystem.UpdateAfter<SS_VehiclePathWatchSystem>(SystemUpdatePhase.MainLoop);
+            //updateSystem.UpdateAfter<SS_PlatformMappingSystem>(SystemUpdatePhase.UIUpdate);
+            //updateSystem.UpdateAfter<SS_IncomingVehicleSystem>(SystemUpdatePhase.MainLoop);
+            //updateSystem.UpdateAfter<SS_ApplyRouteWatchSystem>(SystemUpdatePhase.ApplyTool);
+            //updateSystem.UpdateAfter<SS_BuildingLineCacheSystem>(SystemUpdatePhase.MainLoop);
 
             MainThreadDispatcher.RegisterUpdater(DoWhenLoaded);
             (AssetDatabase<ParadoxMods>.instance.dataSource as ParadoxModsDataSource).onAfterActivePlaysetOrModStatusChanged += DoWhenLoaded;
         }
+        private void RegisterBaseModificationSystems(UpdateSystem updateSystem)
+        {
+            var targetTypes = GetInterfaceImplementations(typeof(IBasicSystem), [GetType().Assembly]);
+            foreach (var type in targetTypes)
+            {
+                if (type.IsCastableTo(typeof(SystemBase)))
+                {
+                    updateSystem.World.GetOrCreateSystemManaged(type);
+                }
+            }
+        }
+
+        private static List<Type> GetInterfaceImplementations(Type interfaceType, IEnumerable<Assembly> assemblies)
+        {
+            if (assemblies == null)
+            {
+                throw new ArgumentNullException("assembly");
+            }
+            else
+            {
+                IEnumerable<Type> classes = (from t in assemblies.SelectMany(x =>
+                {
+                    try
+                    { return x?.GetTypes(); }
+                    catch { return []; }
+                })
+                                             let y = t.GetInterfaces()
+                                             where t.IsClass && !t.IsAbstract && (y.Contains(interfaceType) || interfaceType.IsAssignableFrom(t))
+                                             select t);
+                return [.. classes];
+            }
+        }
+
         private bool isLoaded = false;
         private void DoWhenLoaded()
         {
@@ -74,15 +109,15 @@ namespace StationSignage
             foreach (var atlasFolder in atlases)
             {
                 var files = Directory.GetFiles(atlasFolder, "*.png");
-    
+
                 if (files.Length == 0)
                 {
                     continue;
                 }
 
                 WEImageManagementBridge.RegisterImageAtlas(
-                    typeof(Mod).Assembly, 
-                    Path.GetFileName(atlasFolder), 
+                    typeof(Mod).Assembly,
+                    Path.GetFileName(atlasFolder),
                     files
                 );
             }

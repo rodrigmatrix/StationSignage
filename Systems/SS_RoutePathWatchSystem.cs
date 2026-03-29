@@ -8,13 +8,14 @@ using Unity.Entities;
 
 namespace StationSignage.Systems
 {
-    public partial class SS_RoutePathWatchSystem : SystemBase
+    public partial class SS_RoutePathWatchSystem : SS_BasicSystem
     {
         private EntityQuery m_PathReadyQuery;
-        private ModificationBarrier1 m_ModificationBarrier1;
-        protected override void OnCreate()
+
+        protected override AllowedPhase UpdatePhase => AllowedPhase.Modification1;
+
+        protected override void OnCreateWithBarrier()
         {
-            m_ModificationBarrier1 = World.GetOrCreateSystemManaged<ModificationBarrier1>();
             m_PathReadyQuery = GetEntityQuery(new EntityQueryDesc[] {
              new(){
                  All =[
@@ -38,7 +39,7 @@ namespace StationSignage.Systems
             var job = new RoutePathReadyJob();
             job.m_OwnerLookup = GetComponentLookup<Owner>(true);
             job.m_routeLookup = GetComponentLookup<Route>(true);
-            job.m_cmdBuffer = m_ModificationBarrier1.CreateCommandBuffer().AsParallelWriter();
+            job.m_cmdBuffer = Barrier.CreateCommandBuffer().AsParallelWriter();
             job.m_connectedLookup = GetComponentLookup<Connected>(true);
             job.m_entityTypeHandle = GetEntityTypeHandle();
             job.m_PathUpdatedLookup = GetComponentLookup<PathUpdated>(true);
