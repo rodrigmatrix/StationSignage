@@ -1,11 +1,14 @@
 ﻿using Colossal.Entities;
 using Game.Common;
 using Game.Pathfind;
+using Game.Prefabs;
 using Game.Routes;
 using StationSignage.Components;
+using StationSignage.Components.Shareable;
 using StationSignage.Enums;
 using StationSignage.Systems;
 using StationSignage.Utils;
+using StationSignage.WE_TFMBridge;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,19 +35,26 @@ namespace StationSignage.Formulas
 
         public static Entity GetPlatform(Entity building, Dictionary<string, string> vars)
         {
-            if (EntityManager.HasComponent<SS_PlatformData>(building)) return building;
+            if (WE_TFMComponentGetterBridge.TryGetComponent(building, out SS_PlatformData _)) return building;
             building = EntityUtils.FindTopOwnership(building, EntityManager);
-            var platform = GetPlatformInt(vars);
-            if (platform != null)
+            var targetPlatform = vars.TryGetValue(LinesFormulas.PLATFORM_VAR, out var platformStr);
+            if (!targetPlatform) return Entity.Null;
+            if (platformStr.StartsWith("#"))
             {
-                if (EntityManager.TryGetBuffer<SS_PlatformMappingLink>(building, true, out var buffer) && platform <= buffer.Length)
+                vars.TryGetValue(platformStr[1..], out var newPlatVal);
+                platformStr = newPlatVal;
+            }
+            if (platformStr != null && byte.TryParse(platformStr, out var platform))
+            {
+
+                if (WE_TFMComponentGetterBridge.TryGetBuffer(building, out DynamicBuffer<SS_PlatformMappingLink> buffer) && platform <= buffer.Length)
                 {
                     return buffer[(int)(platform - 1)].platformData;
                 }
             }
             return Entity.Null; // Return null if no matching platform is found
         }
-
+        //StationSignage:_Plat_StationNameSimple
         public static int? GetPlatformInt(Dictionary<string, string> vars)
         {
             if (!vars.TryGetValue("vPlatform", out var platformString))
@@ -68,7 +78,7 @@ namespace StationSignage.Formulas
 
         public static Entity GetIncomingTrainDestinationForPlatform(Entity platform)
         {
-            if (EntityManager.TryGetComponent<SS_VehicleIncomingData>(platform, out var buffer))
+            if (WE_TFMComponentGetterBridge.TryGetComponent(platform, out SS_VehicleIncomingOrderData buffer))
             {
                 if (buffer.nextVehicle0 != Entity.Null)
                 {
@@ -98,10 +108,10 @@ namespace StationSignage.Formulas
 
         public static List<SS_WaypointDestinationConnections> GetPlatformConnections(Entity platformStop, Dictionary<string, string> vars)
         {
-            if (SS_PlatformMappingSystem.CacheVersion != connectionsVersionCache)
+            if (WE_TFMPlatformMappingBridge.GetCacheVersion() != connectionsVersionCache)
             {
                 _cachedConnections.Clear();
-                connectionsVersionCache = SS_PlatformMappingSystem.CacheVersion;
+                connectionsVersionCache = WE_TFMPlatformMappingBridge.GetCacheVersion();
             }
             TransportTypeByImportance lowestPriority = TransportTypeByImportance.LessPrioritary;
             TransportTypeByImportance highestPriority = TransportTypeByImportance.MostPrioritary;
@@ -118,7 +128,7 @@ namespace StationSignage.Formulas
             {
                 HashSet<Entity> excludedLines = [];
                 var owner = EntityUtils.FindTopOwnership(platformStop, EntityManager);
-                if (EntityManager.TryGetBuffer<SS_PlatformMappingLink>(owner, true, out var platformData))
+                if (WE_TFMComponentGetterBridge.TryGetBuffer(owner, out DynamicBuffer<SS_PlatformMappingLink> platformData))
                 {
                     for (int i = 0; i < platformData.Length; i++)
                     {
@@ -145,7 +155,7 @@ namespace StationSignage.Formulas
                         }
                     }
                 }
-                EntityManager.TryGetBuffer<SS_WaypointDestinationConnections>(platformStop, true, out var connectionsBuffer);
+                WE_TFMComponentGetterBridge.TryGetBuffer(platformStop, out DynamicBuffer<SS_WaypointDestinationConnections> connectionsBuffer);
                 connections = [];
                 for (int i = 0; i < connectionsBuffer.Length; i++)
                 {
@@ -166,14 +176,14 @@ namespace StationSignage.Formulas
             int.TryParse(idxStr, out var idx);
             return GetStationTransfers(building, vars).ElementAtOrDefault(idx);
         }
-        
-         public static List<Entity> GetStationTransfers(Entity building, Dictionary<string, string> vars)
+
+        public static List<Entity> GetStationTransfers(Entity building, Dictionary<string, string> vars)
         {
-            if (EntityManager.HasComponent<SS_PlatformData>(building)) return [];
+            if (WE_TFMComponentGetterBridge.TryGetComponent(building, out SS_PlatformData _)) return [];
             building = EntityUtils.FindTopOwnership(building, EntityManager);
             var platformInt = GetPlatformInt(vars);
             var transfers = new List<Entity>();
-            if (!EntityManager.TryGetBuffer<SS_PlatformMappingLink>(building, true, out var buffer)) return transfers;
+            if (!WE_TFMComponentGetterBridge.TryGetBuffer(building, out DynamicBuffer<SS_PlatformMappingLink> buffer)) return transfers;
             for (var i = 0; i < buffer.Length; i++)
             {
                 var platformData = buffer[i].platformData;
@@ -206,7 +216,10 @@ namespace StationSignage.Formulas
                 : SS_SettingSystem.Instance.LineOperatorCity switch
                 {
                     Settings.LineOperatorCityOptions.Generic => ServiceOperator.Default,
-                    Settings.LineOperatorCityOptions.SaoPaulo => EntityManager.GetComponentData<SS_LineStatus>(EntityManager.GetComponentData<Owner>(buffer[0].m_Waypoint).m_Owner).operatorSP,
+                    Settings.LineOperatorCityOptions.SaoPaulo => GetSaoPauloOperator(
+                        WE_TFMComponentGetterBridge.TryGetComponent(EntityManager.GetComponentData<Owner>(buffer[0].m_Waypoint).m_Owner, out SS_LineStatus status) ? status.type : default,
+                        EntityManager.GetComponentData<RouteNumber>(EntityManager.GetComponentData<Owner>(buffer[0].m_Waypoint).m_Owner).m_Number
+                        ),
                     Settings.LineOperatorCityOptions.NewYork => isMetro ? ServiceOperator.MTAOperator : ServiceOperator.Default,
                     Settings.LineOperatorCityOptions.London => isMetro ? ServiceOperator.UndergroundOperator : ServiceOperator.Default,
                     _ => ServiceOperator.Default
@@ -214,9 +227,28 @@ namespace StationSignage.Formulas
         }
 
 
+        private static ServiceOperator GetSaoPauloOperator(TransportType transportType, int routeNumber)
+            => transportType switch
+            {
+                TransportType.Subway => routeNumber switch
+                {
+                    4 => ServiceOperator.Operator03,
+                    5 or 8 or 9 or 15 => ServiceOperator.Operator02,
+                    6 => ServiceOperator.Operator04,
+                    _ => ServiceOperator.Operator01
+                },
+                TransportType.Train => routeNumber switch
+                {
+                    5 or 8 or 9 or 15 => ServiceOperator.Operator02,
+                    _ => ServiceOperator.Operator05
+                },
+                _ => ServiceOperator.Default
+            };
+
+
         public static Color GetMainStationColor(Entity buildingRef, Dictionary<string, string> vars)
         {
-            var lineList = SS_BuildingLineCacheSystem.Instance.GetLines(buildingRef, true);
+            var lineList = WE_TFMBuildingLineCacheBridge.GetLines(buildingRef, true);
             if (lineList == null || lineList.Count != 1) return Color.white;
             return lineList[0].Color;
         }

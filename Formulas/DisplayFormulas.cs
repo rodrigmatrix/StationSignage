@@ -6,13 +6,16 @@ using Game.SceneFlow;
 using Game.Settings;
 using StationSignage.BridgeWE;
 using StationSignage.Components;
+using StationSignage.Components.Shareable;
+using StationSignage.Enums;
 using StationSignage.Systems;
+using StationSignage.WE_TFMBridge;
 using StationSignage.WEBridge;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Entities;
 using Unity.Mathematics;
-using UnityEngine;
+using Color = UnityEngine.Color;
 
 namespace StationSignage.Formulas;
 
@@ -55,7 +58,7 @@ public class DisplayFormulas
         return channel switch
         {
             1 => WERouteFn.GetWaypointStaticDestinationName(PlatformFormulas.GetIncomingTrainDestinationForPlatform(PlatformFormulas.GetPlatform(_, vars))),
-            _ => GetWelcomeMessage(SS_LineStatusSystem.Instance.EntityManager.GetComponentData<SS_PlatformData>(PlatformFormulas.GetPlatform(_, vars)).type)
+            _ => GetWelcomeMessage(WE_TFMComponentGetterBridge.TryGetComponent(PlatformFormulas.GetPlatform(_, vars), out SS_PlatformData data) ? data.type : default)
         };
     }
 
@@ -69,25 +72,29 @@ public class DisplayFormulas
             _ => Square
         };
     }
-    
+
     public static string GetImage(Entity buildingRef, Dictionary<string, string> vars)
     {
         vars.TryGetValue("$idx", out var idxStr);
-        int.TryParse(idxStr, out var idx);
-        return GetImageList(buildingRef, vars).ElementAtOrDefault(idx);
+        return vars.TryGetValue("!img_" + idxStr, out var images) ? images : "";
     }
-    
+
+    public static int GetImageCount(Entity buildingRef, Dictionary<string, string> vars)
+    {
+        vars.TryGetValue("!img_ct", out var idxStr);
+        return int.TryParse(idxStr, out var ct) ? ct : 0;
+    }
     public static HashSet<string> GetImageList(Entity buildingRef, Dictionary<string, string> vars)
     {
-        vars.TryGetValue("images", out var images);
-        if (string.IsNullOrWhiteSpace(images))
-            return [];
-
-        return images
-            .Split(',')
-            .Select(s => s.Trim())
-            .Where(s => !string.IsNullOrEmpty(s))
-            .ToHashSet();
+        vars.TryGetValue("!images", out var images);
+        return string.IsNullOrWhiteSpace(images)
+            ? []
+            : [..
+                images
+                .Split(',')
+                .Select(s => s.Trim())
+                .Where(s => !string.IsNullOrEmpty(s))
+            ];
     }
 
     public static string GetPlatformImage(Entity buildingRef, Dictionary<string, string> vars)
@@ -106,16 +113,16 @@ public class DisplayFormulas
         };
     }
 
-    public static SS_VehicleTvData GetVehicleIncomingInformation(Entity building, Dictionary<string, string> vars)
+    public static SS_VehicleIncomingDetailData GetVehicleIncomingInformation(Entity building, Dictionary<string, string> vars)
     {
         var platform = PlatformFormulas.GetPlatform(building, vars);
-        return SS_IncomingVehicleSystem.Instance.GetTvInformation(platform);
+        return WE_TFMIncomingVehicleBridge.GetIncomingDetailInformation(platform);
     }
 
     public static string GetVehicleIncomingMessage(Entity building, Dictionary<string, string> vars)
     {
         var info = GetVehicleIncomingInformation(building, vars);
-        if (info.subtitle == SS_IncomingVehicleSystem.VehicleStatusDescription.DistanceToStation)
+        if (info.subtitle == VehicleStatusDescription.DistanceToStation)
         {
             if ((GameManager.instance.settings.userInterface.unitSystem == InterfaceSettings.UnitSystem.Freedom))
             {
@@ -132,7 +139,7 @@ public class DisplayFormulas
                     : $"{valueKm.ToString("#,##0.0", WELocalizationBridge.GetWeCultureInfo())}km";
             }
         }
-        if (info.subtitle == SS_IncomingVehicleSystem.VehicleStatusDescription.AverageWaitTime)
+        if (info.subtitle == VehicleStatusDescription.AverageWaitTime)
         {
             var timeSecs = info.distanceHm;
             if (timeSecs < 60)
@@ -154,7 +161,7 @@ public class DisplayFormulas
         return "";
     }
 
-    public static Color GetIncomingVehicleCapacityColor(SS_VehicleTvData data, Dictionary<string, string> vars)
+    public static Color GetIncomingVehicleCapacityColor(SS_VehicleIncomingDetailData data, Dictionary<string, string> vars)
         => !vars.TryGetValue("$idx", out var idxStr) || !int.TryParse(idxStr, out var idx) || idx < 0 || idx >= 8 ? Color.white
             : data[idx] switch
             {
@@ -162,7 +169,7 @@ public class DisplayFormulas
                 <= 192 => Color.yellow,
                 _ => Color.red,
             };
-    public static float3 GetIncomingVehicleCapacityScale(SS_VehicleTvData data, Dictionary<string, string> vars)
+    public static float3 GetIncomingVehicleCapacityScale(SS_VehicleIncomingDetailData data, Dictionary<string, string> vars)
         => !vars.TryGetValue("$idx", out var idxStr) || !int.TryParse(idxStr, out var idx) || idx < 0 || idx >= 8 ? new float3(1, 1, 1)
             : new float3(1, data[idx] / 255f, 1);
     public static string GetIncomingVehicleImageName(Entity _, Dictionary<string, string> vars)

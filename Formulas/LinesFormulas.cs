@@ -1,7 +1,7 @@
-﻿using Colossal.Entities;
-using Game.Prefabs;
-using StationSignage.Components;
-using StationSignage.Systems;
+﻿using Game.Prefabs;
+using Game.Simulation;
+using StationSignage.Components.Shareable;
+using StationSignage.WE_TFMBridge;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Entities;
@@ -11,6 +11,8 @@ namespace StationSignage.Formulas;
 
 public static class LinesFormulas
 {
+    private static SimulationSystem _simulationSystem;
+    private static SimulationSystem SimulationSystem => _simulationSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SimulationSystem>();
 
     public const string LINETYPE_VAR = "lineType";
     public const string CURRENT_INDEX_VAR = "$idx";
@@ -23,16 +25,16 @@ public static class LinesFormulas
         if (vars.TryGetValue(LINES_EACH_SCREEN_TVSTATUS, out var statusLinesStr) && byte.TryParse(statusLinesStr, out var statusLinesPgSize))
         {
             TransportType transportType = TransportType.None;
-            if (SS_LineStatusSystem.Instance.EntityManager.TryGetComponent<SS_PlatformData>(PlatformFormulas.GetPlatform(buildingRef, vars), out var data))
+            if (WE_TFMComponentGetterBridge.TryGetComponent(PlatformFormulas.GetPlatform(buildingRef, vars), out SS_PlatformData data))
             {
                 transportType = data.type;
             }
 
-            var cityLines = SS_LineStatusSystem.Instance.GetCityLines(transportType, false, true);
+            var cityLines = WE_TFMLineStatusBridge.GetCityLines(transportType, false, true);
 
             if (statusLinesPgSize == 0 || cityLines.Count < statusLinesPgSize) return cityLines;
             var totalPages = (int)math.ceil(cityLines.Count / statusLinesPgSize);
-            var simulationPage = buildingRef.Index + (int)(SS_LineStatusSystem.Instance.GameSimulationFrame >> 8);
+            var simulationPage = buildingRef.Index + (int)(SimulationSystem.frameIndex >> 8);
             return [.. cityLines
                 .Skip(simulationPage % totalPages * statusLinesPgSize)
                 .Take(statusLinesPgSize)];

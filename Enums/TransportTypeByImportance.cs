@@ -25,12 +25,20 @@ namespace StationSignage.Enums
             {
                 TransportType.Airplane => TransportTypeByImportance.Airplane,
                 TransportType.Ship => TransportTypeByImportance.Ship,
-                //TransportType.Ferry => TransportTypeByImportance.Ferry,
+                TransportType.Ferry => TransportTypeByImportance.Ferry,
                 TransportType.Train => TransportTypeByImportance.Train,
                 TransportType.Subway => TransportTypeByImportance.Subway,
                 TransportType.Tram => TransportTypeByImportance.Tram,
                 TransportType.Bus => TransportTypeByImportance.Bus,
                 _ => throw new ArgumentOutOfRangeException(nameof(tt), tt, null)
+            };
+        }
+        public static byte GetEffectiveImportance(this TransportTypeByImportance tt)
+        {
+            return tt switch
+            {
+                TransportTypeByImportance.Subway => (byte)TransportTypeByImportance.Train,
+                _ => (byte)tt
             };
         }
     }

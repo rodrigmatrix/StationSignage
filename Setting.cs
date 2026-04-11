@@ -38,16 +38,6 @@ public class Settings(IMod mod) : ModSetting(mod)
     [SettingsUISection(DeveloperTab, DeveloperSettingsGroup)]
     public int TrainLines { get; set; } = 6;
 
-    [SettingsUISection(MainTab, GeneralSettingsGroup)]
-    [SettingsUIButton]
-    public bool ResetConnections
-    {
-        set
-        {
-            World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_PlatformMappingSystem>().MarkToResetWaypointsDestinations();
-        }
-    }
-
     public override void SetDefaults()
     {
 
@@ -96,9 +86,6 @@ public class LocaleEn(Settings setting) : IDictionarySource
 
             { setting.GetOptionLabelLocaleID(nameof(Settings.TrainLines)), "Train Lines" },
             { setting.GetOptionDescLocaleID(nameof(Settings.TrainLines)), $"Number of train lines to display." },
-
-            { setting.GetOptionLabelLocaleID(nameof(Settings.ResetConnections)), "Reset connections mapped" },
-            { setting.GetOptionDescLocaleID(nameof(Settings.ResetConnections)), $"Use this if you have changed to use new mods or remove mods that may affect how connection lines are affected (like XTM)." },
 
             { setting.GetEnumValueLocaleID(Settings.LineIndicatorShapeOptions.Square), "Square Shape" },
             { setting.GetEnumValueLocaleID(Settings.LineIndicatorShapeOptions.Circle), "Circle Shape" },

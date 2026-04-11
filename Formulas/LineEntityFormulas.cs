@@ -2,21 +2,22 @@
 using Game.Routes;
 using Game.UI;
 using StationSignage.BridgeWE;
-using StationSignage.Components;
+using StationSignage.Components.Shareable;
 using StationSignage.Systems;
 using StationSignage.Utils;
+using StationSignage.WE_TFMBridge;
 using Unity.Entities;
 
 namespace StationSignage.Formulas
 {
     public static class LineEntityFormulas
     {
-        private static SS_LineStatusSystem _linesSystem;
+        private static World refWorld;
+        private static EntityManager EntityManager => (refWorld ??= World.DefaultGameObjectInjectionWorld).EntityManager;
         private static NameSystem _nameSystem;
         public static SS_LineStatus GetLineStatus(Entity line)
         {
-            _linesSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_LineStatusSystem>();
-            _linesSystem.EntityManager.TryGetComponent(line, out SS_LineStatus status);
+            WE_TFMComponentGetterBridge.TryGetComponent(line, out SS_LineStatus status);
             return status;
         }
         public static UnityEngine.Color GetLineColor(Entity line)
@@ -25,8 +26,7 @@ namespace StationSignage.Formulas
             {
                 return UnityEngine.Color.white;
             }
-            _linesSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_LineStatusSystem>();
-            _linesSystem.EntityManager.TryGetComponent(line, out Game.Routes.Color status);
+            EntityManager.TryGetComponent(line, out Game.Routes.Color status);
             return status.m_Color;
         }
 

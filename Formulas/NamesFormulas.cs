@@ -6,7 +6,6 @@ using Game.SceneFlow;
 using Game.Settings;
 using Game.Simulation;
 using Game.UI;
-using StationSignage.Systems;
 using System;
 using Unity.Entities;
 
@@ -14,21 +13,18 @@ namespace StationSignage.Formulas;
 
 public class NamesFormulas
 {
-    private static SS_LineStatusSystem _linesSystem;
     private static NameSystem _nameSystem;
     private static TimeSystem _timeSystem;
     private static EntityManager _entityManager;
 
     public NamesFormulas()
     {
-        _linesSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_LineStatusSystem>();
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
         _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
     }
 
     private static string GetName(string id)
     {
-        _linesSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_LineStatusSystem>();
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
         _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
         if (id is null || id.Length == 0)
@@ -40,7 +36,6 @@ public class NamesFormulas
 
     private static readonly Func<Entity, string> GetMainBuildingNameBinding = (buildingRef) =>
     {
-        _linesSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_LineStatusSystem>();
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
         _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
         return _entityManager.TryGetComponent<Owner>(buildingRef, out var owner) ? _nameSystem.GetRenderedLabelName(owner.m_Owner) : "";
@@ -48,7 +43,6 @@ public class NamesFormulas
 
     private static readonly Func<Entity, string> GetBuildingNameBinding = (buildingRef) =>
     {
-        _linesSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_LineStatusSystem>();
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
         _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
         return _nameSystem.GetRenderedLabelName(GetOwnerRecursive(buildingRef));
@@ -61,7 +55,6 @@ public class NamesFormulas
 
     private static readonly Func<Entity, string> GetBuildingRoadNameBinding = (buildingRef) =>
     {
-        _linesSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SS_LineStatusSystem>();
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
         _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
         _entityManager.TryGetComponent<Building>(buildingRef, out var building);

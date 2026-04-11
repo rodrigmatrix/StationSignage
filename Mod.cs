@@ -2,13 +2,16 @@
 using Colossal.Core;
 using Colossal.IO.AssetDatabase;
 using Colossal.Logging;
+using Colossal.OdinSerializer.Utilities;
+using Colossal.Reflection;
 using Game;
 using Game.Modding;
 using Game.SceneFlow;
 using HarmonyLib;
 using StationSignage.BridgeWE;
-using StationSignage.Formulas;
 using StationSignage.Systems;
+using StationSignage.Utils;
+using StationSignage.WE_TFMBridge;
 using StationSignage.WEBridge;
 using System;
 using System.Collections.Generic;
@@ -41,18 +44,52 @@ namespace StationSignage
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEn(m_Setting));
             AssetDatabase.global.LoadSettings(nameof(StationSignage), m_Setting, new Settings(this));
 
-            updateSystem.UpdateAt<SS_LineStatusSystem>(SystemUpdatePhase.UIUpdate);
-            updateSystem.UpdateAt<SS_RoutePathWatchSystem>(SystemUpdatePhase.Modification1);
-            updateSystem.UpdateAt<SS_WaypointConnectionsSystem>(SystemUpdatePhase.Modification1);
-            updateSystem.UpdateAfter<SS_VehiclePathWatchSystem>(SystemUpdatePhase.MainLoop);
-            updateSystem.UpdateAfter<SS_PlatformMappingSystem>(SystemUpdatePhase.UIUpdate);
-            updateSystem.UpdateAfter<SS_IncomingVehicleSystem>(SystemUpdatePhase.MainLoop);
-            updateSystem.UpdateAfter<SS_ApplyRouteWatchSystem>(SystemUpdatePhase.ApplyTool);
-            updateSystem.UpdateAfter<SS_BuildingLineCacheSystem>(SystemUpdatePhase.MainLoop);
+            RegisterBaseModificationSystems(updateSystem);
+            //updateSystem.UpdateAt<SS_LineStatusSystem>(SystemUpdatePhase.UIUpdate);
+            //updateSystem.UpdateAt<SS_RoutePathWatchSystem>(SystemUpdatePhase.Modification1);
+            //updateSystem.UpdateAt<SS_WaypointConnectionsSystem>(SystemUpdatePhase.Modification1);
+            //updateSystem.UpdateAfter<SS_VehiclePathWatchSystem>(SystemUpdatePhase.MainLoop);
+            //updateSystem.UpdateAfter<SS_PlatformMappingSystem>(SystemUpdatePhase.UIUpdate);
+            //updateSystem.UpdateAfter<SS_IncomingVehicleSystem>(SystemUpdatePhase.MainLoop);
+            //updateSystem.UpdateAfter<SS_ApplyRouteWatchSystem>(SystemUpdatePhase.ApplyTool);
+            //updateSystem.UpdateAfter<SS_BuildingLineCacheSystem>(SystemUpdatePhase.MainLoop);
 
             MainThreadDispatcher.RegisterUpdater(DoWhenLoaded);
             (AssetDatabase<ParadoxMods>.instance.dataSource as ParadoxModsDataSource).onAfterActivePlaysetOrModStatusChanged += DoWhenLoaded;
         }
+        private void RegisterBaseModificationSystems(UpdateSystem updateSystem)
+        {
+            var targetTypes = GetInterfaceImplementations(typeof(IBasicSystem), [GetType().Assembly]);
+            foreach (var type in targetTypes)
+            {
+                if (type.IsCastableTo(typeof(SystemBase)))
+                {
+                    updateSystem.World.GetOrCreateSystemManaged(type);
+                }
+            }
+        }
+
+        private static List<Type> GetInterfaceImplementations(Type interfaceType, IEnumerable<Assembly> assemblies)
+        {
+            if (assemblies == null)
+            {
+                throw new ArgumentNullException("assembly");
+            }
+            else
+            {
+                IEnumerable<Type> classes = (from t in assemblies.SelectMany(x =>
+                {
+                    try
+                    { return x?.GetTypes(); }
+                    catch { return []; }
+                })
+                                             let y = t.GetInterfaces()
+                                             where t.IsClass && !t.IsAbstract && (y.Contains(interfaceType) || interfaceType.IsAssignableFrom(t))
+                                             select t);
+                return [.. classes];
+            }
+        }
+
         private bool isLoaded = false;
         private void DoWhenLoaded()
         {
@@ -74,15 +111,15 @@ namespace StationSignage
             foreach (var atlasFolder in atlases)
             {
                 var files = Directory.GetFiles(atlasFolder, "*.png");
-    
+
                 if (files.Length == 0)
                 {
                     continue;
                 }
 
                 WEImageManagementBridge.RegisterImageAtlas(
-                    typeof(Mod).Assembly, 
-                    Path.GetFileName(atlasFolder), 
+                    typeof(Mod).Assembly,
+                    Path.GetFileName(atlasFolder),
                     files
                 );
             }
@@ -126,47 +163,94 @@ namespace StationSignage
 
         private bool DoPatches()
         {
-            try
-            {
-                if (AppDomain.CurrentDomain.GetAssemblies().SingleOrDefault(assembly => assembly.GetName().Name == "BelzontWE") is Assembly weAssembly)
-                {
-                    var exportedTypes = weAssembly.ExportedTypes;
-                    foreach (var (type, sourceClassName) in new List<(Type, string)>() {
+            return ConnectBridge("BelzontWE", [
                     (typeof(WEFontManagementBridge), "FontManagementBridge"),
                     (typeof(WEImageManagementBridge), "ImageManagementBridge"),
                     (typeof(WETemplatesManagementBridge), "TemplatesManagementBridge"),
                     (typeof(WERouteFn), "WERouteFn"),
                     (typeof(WELocalizationBridge), "LocalizationBridge"),
                     (typeof(WEModuleOptionsBridge), "ModuleOptionsBridge")
-                })
+                ]) && ConnectBridge("WE_TFM", [
+                    (typeof(WE_TFMBuildingLineCacheBridge), "WE_TFMBuildingLineCacheBridge"),
+                    (typeof(WE_TFMComponentGetterBridge), "WE_TFMComponentGetterBridge"),
+                    (typeof(WE_TFMIncomingVehicleBridge), "WE_TFMIncomingVehicleBridge"),
+                    (typeof(WE_TFMLineStatusBridge), "WE_TFMLineStatusBridge"),
+                    (typeof(WE_TFMPlatformMappingBridge), "WE_TFMPlatformMappingBridge"),
+                ]);
+        }
+        private static bool ConnectBridge(string dllName, List<(Type, string)> typesMapping)
+        {
+            try
+            {
+                if (AppDomain.CurrentDomain.GetAssemblies().SingleOrDefault(assembly => assembly.GetName().Name == dllName) is Assembly weAssembly)
+                {
+                    var exportedTypes = weAssembly.ExportedTypes;
+                    foreach (var (type, sourceClassName) in typesMapping)
                     {
                         var targetType = exportedTypes.First(x => x.Name == sourceClassName);
                         foreach (var method in type.GetMethods(BindingFlags.Public | BindingFlags.Static))
                         {
-                            var srcMethod = targetType.GetMethod(method.Name, allFlags, null, method.GetParameters().Select(x => x.ParameterType).ToArray(), null);
-                            if (srcMethod != null)
+                            MethodInfo srcMethod;
+                            if (method.TryGetAttribute<PatchGenericMethod>(out var attribute))
                             {
-                                Harmony.ReversePatch(srcMethod, new HarmonyMethod(method));
+                                var targetMethodName = attribute.OriginalMethodName ?? method.Name;
+                                MethodInfo[] methods = targetType.GetMethods(allFlags);
+                                srcMethod = methods.FirstOrDefault(x => x.Name == targetMethodName && x.IsGenericMethod && x.GetGenericArguments().Length == attribute.Types.Length);
+                                if (srcMethod == null)
+                                {
+                                    log.Warn($"Method not found while patching {dllName}: {targetType.FullName} {targetMethodName}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))}) with generic arguments [{string.Join(", ", attribute.Types.Select(x => x.FullName))}] - Searched for {targetMethodName}");
+                                    continue;
+                                }
+                                if (!srcMethod.IsGenericMethod || srcMethod.GetGenericArguments().Length != attribute.Types.Length)
+                                {
+                                    log.Warn($"Method not found while patching {dllName}: {targetType.FullName} {srcMethod.Name}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))}) with generic arguments [{string.Join(", ", [.. attribute.Types.Select(x => x.FullName)])}] - Incompatible types (found: [{string.Join(", ", [.. srcMethod.GetGenericArguments().Select(x => x.FullName)])}])");
+                                    continue;
+                                }
+                                srcMethod = srcMethod.MakeGenericMethod(attribute.Types);
+                                if (!srcMethod.GetParameters().Types().SequenceEqual(method.GetParameters().Types()) || srcMethod.ReturnType != method.ReturnType)
+                                {
+                                    log.Warn($"Method not found while patching {dllName}: {targetType.FullName} {srcMethod.Name}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))}) with generic arguments [{string.Join(", ", attribute.Types.Select(x => x.FullName))}] - Parameter or return type mismatch (found: ({string.Join(", ", srcMethod.GetParameters().Select(x => $"{x.ParameterType}"))}) => {srcMethod.ReturnType.FullName})");
+                                    continue;
+                                }
                             }
                             else
                             {
-                                log.Warn($"Method not found while patching WE: {targetType.FullName} {srcMethod.Name}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))})");
+                                srcMethod = targetType.GetMethod(method.Name, allFlags, null, [.. method.GetParameters().Select(x => x.ParameterType)], null);
+                                if (srcMethod == null)
+                                {
+                                    log.Warn($"Method not found while patching {dllName}: {targetType.FullName} {method.Name}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))})");
+                                    continue;
+                                }
+                                if (srcMethod.IsGenericMethod)
+                                {
+                                    log.Warn($"Method {srcMethod} is generic but doesn't have {nameof(PatchGenericMethod)} attribute while patching {dllName}: {targetType.FullName} {srcMethod.Name}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))})");
+                                    continue;
+                                }
+                            }
+                            if (srcMethod != null)
+                            {
+                                Harmony.ReversePatch(srcMethod, new HarmonyMethod(method));
+                                log.Info($"Reverse Patched: {srcMethod} => {method}");
+                            }
+                            else
+                            {
+                                log.Warn($"Method not found while patching {dllName}: {targetType.FullName} {srcMethod.Name}({string.Join(", ", method.GetParameters().Select(x => $"{x.ParameterType}"))})");
                             }
                         }
                     }
+                    return true;
                 }
                 else
                 {
-                    log.Warn("Write Everywhere dll file required for using this mod! Check if it's enabled.");
+                    log.Warn($"{dllName}.dll file required for using this mod! Check if it's enabled.");
                     return false;
                 }
             }
-            catch
+            catch (Exception e)
             {
-                log.Warn("Write Everywhere dll file required for using this mod! Check if it's enabled.");
+                log.Warn($"{dllName}.dll file required for using this mod! Check if it's enabled. Error loading.\n{e}");
                 return false;
             }
-            return true;
         }
 
         public void OnDispose()

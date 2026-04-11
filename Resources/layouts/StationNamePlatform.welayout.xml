@@ -1,0 +1,244 @@
+<WELayout>
+  <self itemName="Root StationName">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="-23.82" y="0.51" z="4.12999964" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="1E-05" y="1E-05" z="1" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <whiteMesh />
+    <defaultStyle>
+      <color>FFFFFFFF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0</metallic>
+      <smoothness>0</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+  <children>
+    <self itemName="Main">
+      <transform pivot="TopCenter" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="3" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="8" y="1.05" z="0.1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteCubeMesh />
+      <defaultStyle>
+        <color>000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0.56722194</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Front">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="0.05" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="7.9" y="1" z="1" />
+          <mustDraw formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform.Index">1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:_Plat_StationNameSimple</layout>
+        </layoutMesh>
+      </self>
+      <variable key="platform" value="#platFG" />
+    </children>
+    <children>
+      <self itemName="Back">
+        <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="-0.052" />
+          <offsetRotation x="-0" y="180.0001" z="0" />
+          <scale x="7.9" y="1" z="1" />
+          <mustDraw formulae="&amp;StationSignage.Formulas.PlatformFormulas;GetPlatform.Index">1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>StationSignage:_Plat_StationNameSimple</layout>
+        </layoutMesh>
+      </self>
+      <variable key="platform" value="#platBG" />
+    </children>    
+  </children>
+  <children>
+    <self itemName="Structure Ground">
+      <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="5E-05" y="5E-05" z="1" />
+        <mustDraw formulae="&amp;BelzontWE.Builtin.WEParameterFn;RelVarInt1.=0">1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Structure">
+        <transform pivot="BottomRight" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="4" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.1" y="3" z="0.1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <whiteCubeMesh />
+        <defaultStyle>
+          <color>000000FF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0.591359</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Structure">
+        <transform pivot="BottomLeft" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="-4" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.1" y="3" z="0.1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <whiteCubeMesh />
+        <defaultStyle>
+          <color>000000FF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0.591359</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+    <variable key="!!r1" value="baseTp" />
+  </children>
+  <children>
+    <self itemName="Structure Hanging">
+      <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0" y="0" z="1" />
+        <mustDraw formulae="&amp;BelzontWE.Builtin.WEParameterFn;RelVarInt1.=1">1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle decalFlags="0">
+        <color>00000000</color>
+        <emissiveColor>00000000</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>000000</colorMask1>
+        <colorMask2>000000</colorMask2>
+        <colorMask3>000000</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Structure">
+        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="3" y="2.5" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.05" y="1.5" z="0.05" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <whiteCubeMesh />
+        <defaultStyle>
+          <color>000000FF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0.591359</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Structure">
+        <transform pivot="BottomCenter" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="-3" y="2.5" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.05" y="1.5" z="0.05" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <whiteCubeMesh />
+        <defaultStyle>
+          <color>000000FF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0.591359</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+    <variable key="!!r1" value="baseTp" />
+  </children>
+</WELayout>

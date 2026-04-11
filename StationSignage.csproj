@@ -13,6 +13,7 @@
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
 		<AdditionalFilesDirectory>Resources</AdditionalFilesDirectory>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <WarningsAsErrors>CS0618</WarningsAsErrors>
 	</PropertyGroup>
   <!--<Target Name="RunModPostProcessor" AfterTargets="AfterBuild" Condition="False" />-->
 
@@ -55,7 +56,10 @@
 		</Reference>
 		<Reference Include="Unity.Mathematics">
 			<Private>false</Private>
-		</Reference>
+		</Reference>  
+    <Reference Include="Colossal.OdinSerializer">
+      <Private>False</Private>
+    </Reference>
 	</ItemGroup>
 
   <ItemGroup>
